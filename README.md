@@ -1,5 +1,12 @@
 ## Welcome to GitHub Pages
 
+各位如果再正式進行專案 有做更動 請再以此文檔下方更新 如下
+
+12/28 敬哲 對Resorces/OOO.JAVA 進行更新 請各位在看一下有沒有問題
+-----------
+
+
+
 You can use the [editor on GitHub](https://github.com/ms0428586/test/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
