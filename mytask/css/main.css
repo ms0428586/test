@@ -1,0 +1,14 @@
+.navbar-custom {
+    background-color: #dcc7aa;
+}
+.navbar-custom .navbar-brand ,
+.navbar-custom .navbar-text{
+    color: #f7f7f7;
+}
+.navbar-custom .navbar-nav .nav-link {
+    color: #6b7a8f;
+    font-weight: 900;
+}
+.navbar-custom .navbar-toggler-icon {
+    color: #fffefe;
+}
