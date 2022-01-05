@@ -16,6 +16,20 @@
     color: #6b7a8f;
     font-weight: 900;
 }
+.footer .nav-link{
+    background-color: #dcc7aa;
+    color: #6b7a8f;
+    font-weight: 900;
+    text-align: center
+}
+footer{
+    margin-top: -50px; 
+}
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
 
 /*!
  * Bootstrap v5.0.0 (https://getbootstrap.com/)

@@ -39,9 +39,9 @@ webnavitagion= '<nav class=" navbar fixed-top navbar-expand-lg navbar-custom " >
   </div>\
 </div>\
 </nav>\
-<nav class="navbar fixed-bottom navbar-expand-lg navbar-custom " >\
+<footer class="navbar fixed-bottom navbar-expand-lg navbar-custom " >\
 <div class="container">\
-    <a class="navbar-brand" href="#"></a>\
+    <a class="navbar-footer" href="#"></a>\
     <div class="collapse  navbar-collapse justify-content-center " id="navArea">\
       <ul class=" nav navbar-nav ">\
           <li class="nav-item">\
@@ -52,5 +52,5 @@ webnavitagion= '<nav class=" navbar fixed-top navbar-expand-lg navbar-custom " >
       </ul>\
   </div>\
 </div>\
-</nav>'
+</footer>'
 document.write(webnavitagion)
