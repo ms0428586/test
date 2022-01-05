@@ -25,10 +25,14 @@
 footer{
     margin-top: -50px; 
 }
-html, body {
+.cat{
+    color: #6b7a8f;
+    font-weight: 500;   
+}
+/* html, body {
     height: 100%;
     margin: 0;
-  }
+  } */
 
 
 /*!
