@@ -12,9 +12,6 @@
     font-weight: 900;
 }
 
-.navbar-custom .navbar-toggler-icon {
-    color: #fffefe;
-}
 .nav .nav-link{
     color: #6b7a8f;
     font-weight: 900;
@@ -591,7 +588,8 @@ progress {
     padding-right: var(--bs-gutter-x, .75rem);
     padding-left: var(--bs-gutter-x, .75rem);
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    margin-bottom:auto;
 }
 
 @media (min-width:576px) {

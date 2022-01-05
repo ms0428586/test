@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	   
+    <style>  	
+    	.box1 {    		
+    		width: 600px;
+    		padding: 25px;
+    		margin: auto;
+    		color: #0a0a0a;
+            background-color: antiquewhite;   		
+    	}  
+        img[alt $="logo"]  	{
+            width: 80px;height: 80px;
+        }
+
+    </style>    
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col-6">
+            2 of 3 (wider)
+          </div>
+          <div class="col">
+            3 of 3
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col-5">
+            2 of 3 (wider)
+          </div>
+          <div class="col">
+            3 of 3
+          </div>
+        </div>
+      </div>
+    <h1 class="display-6 text-center ">遺失驗證碼</h1>
+	<div style="border: solid 5px #6B7A8F;"class="box1">
+		<div class="container"> 
+            <form>
+                <div class="mb-3">
+                    <label for="useremail" class="form-label">電子郵件</label>
+                    <input type="email" class="form-control" id="useremail" placeholder="輸入電子郵件" required
+                    pattern="[a-z0-9._%+-]@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+                <div class="mb-3">
+                    <label for="userpasswd" class="form-label">密碼</label>
+                    <input type="password" class="form-control" id="userpasswd" placeholder="輸入密碼" required>
+                    <p><a href="(網址)">忘記密碼</a></p>
+                </div>
+                <div>
+                <button type="submit" class="btn btn-primary">取得驗證碼</button>
+                <a href="(網址)">回到登入</a>   
+                </div>
+            </form>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
