@@ -33,7 +33,16 @@ footer{
     height: 100%;
     margin: 0;
   } */
-
+  .dog{
+    color: #f7882f;
+    font-weight: 900;
+  }
+  .btn-good {
+    color: #fff;
+    background-color: #dcc7aa;
+    border-color: #dcc7aa;
+    border-radius: 5px;
+}
 
 /*!
  * Bootstrap v5.0.0 (https://getbootstrap.com/)
