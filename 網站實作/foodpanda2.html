@@ -1,0 +1,195 @@
+<div class="hero-section-form">
+            
+    <form method="GET" class="location-form restaurants-search-form is-full-address " id="delivery-information-postal-index-form">
+        
+    <div class="address-search-container " id="address-search-container"> <div class="validation-wrapper input-box js-input-box big"><input type="text" class="restaurants-search-form__input restaurants__location__input" id="delivery-information-postal-index" name="" placeholder=" " autocomplete="off" data-placeid="" data-testid="restaurants-search-form__input" role="combobox" aria-autocomplete="list" value=""><strong class="invalid-error-message"></strong><div class="address-suggestions" id="address-suggestions"><ul></ul></div><label for="delivery-information-postal-index" class="msg-title">輸入你欲送達的地址</label><span role="presentation" class="map-closed locate-me"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ic-locate-me-round" width="24" height="24"><defs><path id="a" d="M11.5 18a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM12 4v2.019A6.501 6.501 0 0 1 17.981 12H20v1h-2.019a6.501 6.501 0 0 1-5.98 5.981L12 21h-1v-2.019a6.501 6.501 0 0 1-5.981-5.98L3 13v-1h2.019A6.501 6.501 0 0 1 11 6.02V4h1zm-.5 11a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm0-2.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></defs><use fill="#858585" xlink:href="#a"></use></svg></span></div><div id="map-view-modal"></div></div>
+    
+        <div class="button-container two-buttons">
+                        
+    <button class="button restaurants-search-form__button js-restaurants-search-submit restaurants-search-form__button--full js-restaurants-search-button gtm-homepage-delivery-button restaurants-search-form__button--flexible js-ripple" data-gtm-cta="findRestaurant_main" data-testid="delivery_button">外送<i class="ripple"></i></button>
+                                <span class="button-text-separator">
+                        或
+                    </span>
+                    
+    <button class="button restaurants-search-form__button js-restaurants-search-pickup js-restaurants-search-button gtm-homepage-pickup-button js-ripple" data-gtm-cta="findRestaurant_main" data-testid="pickup_button">外帶自取<i class="ripple"></i></button>
+                    <span class="tooltip-pickup" title="餓了嗎？透過我們全新的外帶自取服務享用您最喜歡的美食吧！"></span>
+                
+                
+    <button class="button js-restaurants-search-submit restaurants-search-form__button--reduced gtm-homepage-delivery-button restaurants-search-form__button js-ripple" data-gtm-cta="findRestaurant_main"><i class="icon-right-open-big"></i><i class="ripple"></i></button>
+                </div>
+    
+    
+        <script>
+            window.VOLO = window.VOLO || {};
+            VOLO.locationInput = {
+                translations: {
+                    msg_error_empty:"請輸入地址",
+                    msg_error_postcode: "所填的地址無效，請確認並再試一次。",
+                    msg_error_city: "所輸入的地址無效，請確認並再試一次。",
+                    msg_error_building: "請輸入門牌號碼",
+                    msg_error_not_found: "您所輸入的地址無效，請確認。",
+                    msg_title_building: "請輸入您的街道號碼",
+                    msg_title_default: "這地址正確嗎？",
+                    msg_title_not_unique: '需要更改地址？請<a class="change-postal-code">按此</a>',
+                    msg_error_geolocation: '無法偵測你的位置',
+                    msg_title_insert_postcode: "請輸入您的地址",
+                    msg_title_street_building: "請輸入路名與門牌號碼",
+                    msg_title_always_show_map:  "移動浮標到準確的外送地址",
+                    postal_code: "輸入你欲送達的地址",
+                    map_submit: "提交",
+                    always_map_submit: "搜尋",
+    
+    
+                    // new translation keys
+                    location_map_title: "你的欲送達地址是？",
+                    input_label: "輸入你欲送達的地址",
+                    input_label_experiment: "輸入你欲送達的地址",
+                    map_tooltip: "我們將外送至此點，欲更改地點請移動地圖",
+                    map_submit_btn: "搜尋",
+                    error_empty_input: "請輸入欲送達地址",
+                    error_invalid_address_not_found: "很抱歉，我們無法辨識你輸入的地址，請再試一次。",
+                    error_invalid_address_not_found_experiment: "格式有誤",
+                    error_invalid_address_country_not_supported: "很抱歉，目前這個區域尚無服務，請移動地圖以更改你欲送達的位置。",
+                    error_incomplete_address_building_street: "請提供建築物名稱或移動地圖至你欲送達的地點",
+                    error_incomplete_address_street: "請提供你的街道號碼或移動地圖至你欲送達的地點",
+                    error_incomplete_address_building: "請提供建築物號碼或移動地圖至你欲送達的地點",
+                    error_incomplete_address_postcode: "請提供郵遞區號",
+                    error_no_geolocation: "我們無法定位至你目前的位置，請確認你的網路連線以及是否有授權給我們位置資訊。",
+    
+                    //where component translation keys
+                    pickup_near_address: "在附近領取餐點",
+                    delivery_by_city: "送到",
+    
+                    //form translations
+                    NEXTGEN_MBL_FLOOR_REQUIRED: "Floor/Unit #",
+                    NEXTGEN_MBL_FLOOR_OPTIONAL: "Floor (optional)",
+                    NEXTGEN_floor: "(非必填) 樓層",
+                    NEXTGEN_intercom: "(非必填) 內線",
+                    NEXTGEN_MBL_REQUIRED_ERROR: "輸入你的樓層／室",
+                    NEXTGEN_COUT_COMPANY_NAME_OPTIONAL_HINT: "Company (optional)",
+                    NEXTGEN_MBL_DF_STREET_TITLE: "We're missing your street",
+                    NEXTGEN_MBL_DF_STREET_ERROR: "Enter your street",
+                    NEXTGEN_MBL_DF_STREET: "Street",
+                    NEXTGEN_MBL_DF_BUILDING_TITLE: "我們缺少您的門牌號碼",
+                    NEXTGEN_MBL_DF_BUILDING_ERROR: "Enter your street number",
+                    NEXTGEN_MBL_DF_BUILDING: "Street number",
+                    NEXTGEN_MBL_DF_AREA_TITLE: "We're missing your area",
+                    NEXTGEN_MBL_DF_AREA_ERROR: "Enter your area",
+                    NEXTGEN_MBL_DF_AREA: "Area",
+                    NEXTGEN_MBL_APARTMENT: "Apartment #",
+                    NEXTGEN_MBL_ENTRANCE_OPTIONAL: "Entrance",
+                    NEXTGEN_address_other: "其他",
+                    NEXTGEN_postcode: "郵遞區號",
+                    NEXTGEN_company: "(非必填) 公司名稱",
+                    NEXTGEN_city: "城市",
+                    NEXTGEN_address_line1: "路名 / 巷弄",
+                    NEXTGEN_address_line2: "室/樓/座",
+                    NEXTGEN_address_line3: "(非必填) 輸入身分證字號以獲 HappyGo 點數",
+                    NEXTGEN_address_line4: "門牌",
+                    NEXTGEN_address_line5: "對講機",
+                    NEXTGEN_delivery_instructions: "(非必填) 請提供額外外送資訊 (例: 社區內的大樓名稱 / 勿按電鈴請打手機)",
+                    mbl_submit_btn : "感謝你的回饋！ ",
+                    mbl_map_submit_btn : "搜尋",
+                    NEXTGEN_MBL_EDIT_MAP: "編輯",
+                    NEXTGEN_building: "號碼",
+                    NEXTGEN_flat_number : "NEXTGEN_flat_number",
+                    NEXTGEN_country_code : "NEXTGEN_country_code",
+                    NEXTGEN_entrance: "(非必填) 弄",
+                    NEXTGEN_MBL_BLOC: "Bloc",
+    
+                    //corporate
+                    switch_to_personal: "轉換到個人帳號",
+                    select_company_address: "選擇公司地址",
+    
+                    //addressbook
+                    delivery_address_title: "送餐地址",
+                    pickup_title: "外帶自取地址",
+                    add_new_address_link: "新增",
+                    cancel_link: "取消",
+                    NEXTGEN_CHECKOUT_NOT_DELIVERABLE: "抱歉！這餐廳目前尚未能夠送餐到您的地點", 
+                    NEXTGEN_FLAT_LABEL: "單位",
+                    NEXTGEN_FLOOR_LABEL: "樓層",
+                    NEXTGEN_INTERCOM_LABEL: "內線",
+                    NEXTGEN_NOTE_TO_RIDER: "給外送夥伴的備註 - 地標/建築物/社區大樓管理室。如您的送餐地址在較大的公共場合例如公園、河堤、疏洪道等，請務必於訂餐後留意手機訊息及電話。",
+                    NEXTGEN_NONE: "無",
+                    INVALID_ADDRESS_ERROR: "請輸入正確地址",
+                    NEXTGEN_ADDRESS_UNSAVED_ERROR:  "別忘了儲存你的地址！",
+                    DELETE_DELIVERY_ADDRESS: "刪除地址？",
+                    DELETE_ADDRESS_MODEL_CONFIRM: "是",
+                    DELETE_ADDRESS_MODEL_REJECT: "否",
+                    CANCEL_ADDRESS_MODAL_TITLE: "CANCEL_ADDRESS_MODAL_TITLE",
+                    CANCEL_ADDRESS_MODAL_CONTENT: "CANCEL_ADDRESS_MODAL_CONTENT",
+                    CANCEL_ADDRESS_MODAL_CONFIRM: "CANCEL_ADDRESS_MODAL_CONFIRM",
+                    CANCEL_ADDRESS_MODAL_REJECT: "CANCEL_ADDRESS_MODAL_REJECT",
+                    A11Y_ICON_DELETE: "Delete",
+                    A11Y_ICON_EDIT: "Edit",
+                    
+                    //labels
+                    NEXTGEN_HOME: "Home",
+                    NEXTGEN_WORK: "Work",
+                    address_label_partner: "Partner",
+                    address_label_other: "Other",
+                    address_label_other_field: "Custom",
+                    address_label_duplicate: "The label %Label% is already saved in your address book. We'll remove this label on other addresses.",
+                    address_label_title: "Add a Label", 
+    
+                    //New address book
+                    VIEW_SAVED_ADDRESS_LINK: "View Saved Addresses",
+                    SAVED_ADDRESS_MODAL_TITLE: "Saved Addresses",
+                    SAVED_ADDRESS_MODAL_CONFIRM: "Save",
+                    SAVED_ADDRESS_MODAL_CANCEL: "Cancel",
+                    DELETE_ADDRESS_MODAL_TITLE: "Delete %address%",
+                    DELETE_ADDRESS_MODAL_MESSAGE: "Are you sure you want to delete this address?",
+                    DELETE_ADDRESS_MODAL_CONFIRM: "Delete Address",
+                    DELETE_ADDRESS_MODAL_CANCEL: "Cancel"
+                }
+            }
+        </script>
+    
+    </form>
+    
+    <script type="text/template" id="template-address-suggestions">
+        <div class="item<%- type == 'autocomplete' ? '' : ' saved-address' %>">
+            <% if (type === 'autocomplete') { %>
+                <span class="main-address"><%- mainAddress %></span>
+                <span class="secondary-address"><%- secondaryAddress %></span>
+            <% } else if (type === 'saved address') { %>
+                <% if (isCompanyAddress) { %>
+                    <svg width="24" class="office-building" height="24" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>icons/location/ic-office</title>
+        <desc>Created with Sketch.</desc>
+        <defs>
+            <path id="icon-office-building-a" d="m17 2.3091-11 2.9987v17.692h11v-20.691zm-12 2.2348 13-3.5439v23h-13v-19.456zm7 2.4561h1v2h-1v-2zm-4 0h1v2h-1v-2zm2 0h1v2h-1v-2zm2 3h1v2h-1v-2zm-4 0h1v2h-1v-2zm2 0h1v2h-1v-2zm2 3h1v2h-1v-2zm-4 0h1v2h-1v-2zm2 0h1v2h-1v-2zm2 3h1v2h-1v-2zm2-9h1v2h-1v-2zm0 3h1v2h-1v-2zm0 3h1v2h-1v-2zm0 3h1v2h-1v-2zm-6 0h1v2h-1v-2zm2 0h1v2h-1v-2zm2 3h1v2h-1v-2zm2 0h1v2h-1v-2zm-6 0h1v2h-1v-2zm2 0h1v2h-1v-2z"/>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+            <g transform="translate(-469 -487)">
+                <g transform="translate(453 270)">
+                    <g transform="translate(0 -183)">
+                        <g transform="translate(0 384)">
+                            <g transform="translate(16 16)">
+                                <mask id="icon-office-building-b" fill="white">
+                                    <use xlink:href="#icon-office-building-a"/>
+                                </mask>
+                                <g fill="#D70F64" fill-rule="evenodd" mask="url(#icon-office-building-b)">
+                                    <rect width="24" height="24"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>            <% } else { %>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
+        <defs>
+            <path id="location-generic" d="M12.94 19.53c.7-.5 1.42-1.1 2.08-1.81A10.13 10.13 0 0 0 18 10.65 5.58 5.58 0 0 0 12.5 5 5.58 5.58 0 0 0 7 10.65c0 2.73 1.1 5.08 2.98 7.07a14.06 14.06 0 0 0 2.52 2.11l.44-.3zM6 10.65A6.58 6.58 0 0 1 12.5 4c3.59 0 6.5 2.98 6.5 6.65C19 17.52 12.5 21 12.5 21S6 17.52 6 10.65zM12.5 7a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 1a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+        </defs>
+        <use class="svg-stroke-container" fill-rule="nonzero" xlink:href="#location-generic"/>
+    </svg>
+                <% } %>
+                <span class="main-address"><%- address %></span>
+            <% } %>
+        </div>
+    </script>
+    
+            </div>
