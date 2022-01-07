@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      width: 300px;
+    }
+    .button{
+      border-radius: 20px;
+      outline: none;
+      margin: 10px auto;
+      font-size: 40px;
+    }    
+  </style>
+</head>
+<body>
+  <div id="card">
+    <img src="../img">
+  </div>
+  <button class="font button" onclick="selectCard();">取卡</button>    
+  
+  <script>
+    function selectCard(){
+      var cards1 = ["", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];    
+      var card_n1 = cards1 [getRandom(1,14)];
+      var cards2 = ["D", "H", "S", "C"];
+      var card_n2 = getRandom(0,4);
+      var card = card_n1 + cards2[card_n2];
+      console.log( card  );
+      var card_div = document.getElementById("card");
+      card_div.innerHTML =  `<img src='images/${card}.png' alt='Playing Card'>`;      
+    }
+    function getRandom(min, max) { //  min <= x < max, x是整數亂數
+      return Math.floor(Math.random() * (max - min) ) + min;
+    }  
+  </script>
+</body>
+</html>
