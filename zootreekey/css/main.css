@@ -44,6 +44,16 @@ footer{
     border-radius: 5px;
 }
 
+/* .footer {
+    position: absolute;
+    top: 100;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 40px;
+    background-color: #dcc7aa;
+} */
+
 /*!
  * Bootstrap v5.0.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
