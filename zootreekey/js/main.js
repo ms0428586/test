@@ -39,7 +39,7 @@ webnavitagion = '<nav class=" navbar fixed-top navbar-expand-lg navbar-custom " 
   </div>\
 </div>\
 </nav>\
-<footer class="navbar fixed-bottom navbar-expand-lg navbar-custom " style="height: 45px;>\
+<footer class="navbar fixed-bottom navbar-expand-lg navbar-custom " style="height: 45px";>\
     <div class="container">\
         <a class="navbar-footer" href="#"></a>\
         <div class="collapse  navbar-collapse justify-content-center " id="navArea">\
