@@ -16,6 +16,68 @@
       font-weight: 900;
     }
   </style>
+    <style>
+      #oknum {
+          display: block;
+          width: 320px;
+          height: 400px;
+          margin: auto;
+          margin-top: 20px;
+          border-radius: 10px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          /* background-image: url('img/logo_1.jpg'); */
+          animation: pictureChange ease 10s infinite;
+      }
+
+      @keyframes pictureChange {
+          0% {
+              transform: rotateY(0deg);
+          }
+
+          50% {
+              transform: rotateY(180deg);
+          }
+
+          100% {
+              transform: rotateY(0deg);
+          }
+      }
+  </style>
+  <script >
+      // var alldata =
+      //     "linkweb,sharejs,csdn,google,baidu,msn,qq,cctv,microsoft,adobe"
+      // var alldataarr = alldata.split(",");
+      var randomImage = new Array();
+
+      //insert the URL of images in array  
+      randomImage[0] = "img/mytask_drawcard/a1.jpg";
+      randomImage[1] = "img/mytask_drawcard/a2.jpg";
+      randomImage[2] = "img/mytask_drawcard/a3.jpg";
+      randomImage[3] = "img/mytask_drawcard/a4.jpg";
+      randomImage[4] = "img/mytask_drawcard/a5.jpg";
+      randomImage[5] = "img/mytask_drawcard/a6.jpg";
+      randomImage[6] = "img/mytask_drawcard/a7.jpg";
+      randomImage[7] = "img/mytask_drawcard/a8.jpg";
+      randomImage[8] = "img/mytask_drawcard/a9.jpg";
+      randomImage[9] = "img/mytask_drawcard/a10.jpg";
+      var num = randomImage.length;
+      var timer
+      function change() {
+          document.getElementById("oknum").innerHTML = '<img src="'+randomImage[GetRnd(0, num)]+'" style="width: 400px; height: 400px;">';
+      }
+      function start() {
+          clearInterval(timer);
+          timer = setInterval('change()', 10);
+      }
+      function ok() {
+          clearInterval(timer);
+          document.getElementById("showresult").value = document.getElementById("oknum").innerText;
+      }
+      function GetRnd(min, max) {
+          return Math.floor(Math.random()*randomImage.length);
+      }
+  </script>
 </head>
 
 <body>
@@ -58,21 +120,27 @@
   <br>
   <div class="container">
     <div class="text-center">
-      <figure class="figure">
-        <img src="img/logo_1.jpg" class="figure-img img-fluid rounded" alt="...">
-        <figcaption class="figure-caption"></figcaption>
-      </figure>
+        <figure class="figure">
+            <span id="oknum" > <img src="img/logo_1.jpg" > </span> 
+        </figure>
     </div>
-    <div class="d-grid gap-2 col-2 mx-auto"><button type="button" class=" btn-good ">
-        <h6 class="gg h3">吃起來</h6>
-      </button>
+    <br>
+    <br>
+    <div class="d-grid gap-1 col-2 mx-auto">
+        <button type="button" class=" btn-good" onclick="start()">
+            <h6 class="gg h3">吃起來</h6>
+         </button>
+         <button type="button" class=" btn-good" onclick="ok()">
+            <h6 class="gg h3">就吃這個</h6>
+        </button>
     </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
   <!-- <footer class="footer ">
     <div class="container">
