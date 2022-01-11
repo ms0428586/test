@@ -15,15 +15,13 @@
         <style>
             #oknum {
                 display: block;
-                width: 320px;
+                width: 400px;
                 height: 400px;
                 margin: auto;
                 margin-top: 20px;
-                border-radius: 10px;
-                background-size: 100%;
-                background-repeat: no-repeat;
                 /* background-image: url('img/logo_1.jpg'); */
                 animation: pictureChange ease 10s infinite;
+                /* transform-origin:50% 100%; */
             }
     
             @keyframes pictureChange {
@@ -63,12 +61,12 @@
                 document.getElementById("oknum").innerHTML = '<img src="'+randomImage[GetRnd(0, num)]+'" style="width: 400px; height: 400px;">';
             }
             function start() {
-                clearInterval(timer);
+                // clearInterval(timer);
                 timer = setInterval('change()', 10);
             }
             function ok() {
                 clearInterval(timer);
-                document.getElementById("showresult").value = document.getElementById("oknum").innerText;
+                document.getElementById().value = document.getElementById("oknum").innerText;
             }
             function GetRnd(min, max) {
                 return Math.floor(Math.random()*randomImage.length);
