@@ -1,0 +1,75 @@
+<head>
+    <link rel=stylesheet type="text/css" href="css/main.css">
+    <title>美食紀錄</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<body>
+    <!-- <biv class="row"> -->
+        <div>
+            <a class="btnt offset-5 col-2 " type="button" data-bs-toggle="modal"
+                data-bs-target="#addinformation">新增內容</a>
+        </div>
+    <!-- </biv> -->
+    <div class="modal fade" id="addinformation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>新增內容</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">店家</span>
+                        <input type="text" class="form-control" placeholder="店家名稱" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">餐點</span>
+                        <input type="text" class="form-control" placeholder="餐點名稱" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">評分</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>我覺得...</option>
+                            <option value="1">超讚!</option>
+                            <option value="2">好吃!</option>
+                            <option value="3">普通!</option>
+                            <option value="3">不太行..</option>
+                            <option value="3">完全不行...</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">心得</span>
+                        <input type="text" class="form-control" placeholder="心得內容" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">任務方式</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>請選擇..</option>
+                            <option value="1">隨機吃</option>
+                            <option value="2">優惠吃</option>
+                            <option value="3">活動吃</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">日期</span>
+                        <input type="date" class="form-control" placeholder="日期" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="image" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn-good ">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
