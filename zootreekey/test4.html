@@ -86,14 +86,14 @@
   //     }
   //   }
   // }
-    function getRandomImage() {
+    // function getRandomImage() {
       var fruits = [
         "#n1", "#n2", "#n3", "#n4",
         "#n5", "#n6", "#n7", "#n8", "#n9"
       ];
       var i = 0;
 
-      while (fruits.length > 0) {
+      if (fruits.length > 0) {
         var r = Math.floor(Math.random() * fruits.length);
         var n = fruits[r];
         document.write("Choosen[" + r + "]: " + n + "<br />");
@@ -107,14 +107,14 @@
           }
         }
       }
-    }
+    // }
 
 
   </script>
 </head>
 
 <body>
-  <div class="container text-center">
+  <!-- <div class="container text-center">
     <div class="row justify-content-md-center">
       <div class="col col-lg-2">
         <figure class="figure">
@@ -178,8 +178,8 @@
   </div>
   <div class="d-grid gap-1 col-2 mx-auto">
     <button type="button" class=" btn-good" onclick="getRandomImage()">
-      <h6 class="gg h3">吃起來</h6>
-    </button>
+      <h6 class="gg h3">吃起來</h6> -->
+    <!-- </button> -->
     <!-- <button type="button" class=" btn-good" onclick="ok()">
         <h6 class="gg h3">停止</h6>
     </button> -->
