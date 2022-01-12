@@ -65,49 +65,49 @@
 
   </script>
   <script>
-     function getRandomImage() {
-    var fruits = [
-      "#n1", "#n2", "#n3", "#n4",
-      "#n5", "#n6", "#n7", "#n8", "#n9"
-    ];
-    var x;
+  //    function getRandomImage() {
+  //   var fruits = [
+  //     "#n1", "#n2", "#n3", "#n4",
+  //     "#n5", "#n6", "#n7", "#n8", "#n9"
+  //   ];
+  //   var x;
 
-    while (fruits.length > 0) {
-      var r = Math.floor(Math.random() * fruits.length);
-      var n = fruits[r];
-      document.write("Choosen[" + r + "]: " + n + "<br />");
-      document.write("Array: " + fruits + "<br />");
-      // return document.getElementById("'fruits[r]'").classList.add("oknum");
+  //   while (fruits.length > 0) {
+  //     var r = Math.floor(Math.random() * fruits.length);
+  //     var n = fruits[r];
+  //     document.write("Choosen[" + r + "]: " + n + "<br />");
+  //     document.write("Array: " + fruits + "<br />");
+  //     // return document.getElementById("'fruits[r]'").classList.add("oknum");
 
-      for (x in fruits) {
-        if (fruits[x] == n) {
-          fruits.splice(x, 1);
+  //     for (x in fruits) {
+  //       if (fruits[x] == n) {
+  //         fruits.splice(x, 1);
+  //       }
+  //     }
+  //   }
+  // }
+    function getRandomImage() {
+      var fruits = [
+        "#n1", "#n2", "#n3", "#n4",
+        "#n5", "#n6", "#n7", "#n8", "#n9"
+      ];
+      var i = 0;
+
+      while (fruits.length > 0) {
+        var r = Math.floor(Math.random() * fruits.length);
+        var n = fruits[r];
+        document.write("Choosen[" + r + "]: " + n + "<br />");
+        document.write("Array: " + fruits + "<br />");
+        // return document.getElementById("fruits[r]").classList.add("oknum");
+
+        for (i = 0; i < fruits.length; i++) {
+          if (fruits[i] == n) {
+            fruits.splice(i, 1);
+            i--;
+          }
         }
       }
     }
-  }
-    // function getRandomImage() {
-    //   var fruits = [
-    //     "#n1", "#n2", "#n3", "#n4",
-    //     "#n5", "#n6", "#n7", "#n8", "#n9"
-    //   ];
-    //   var i = 0;
-
-    //   while (fruits.length > 0) {
-    //     var r = Math.floor(Math.random() * fruits.length);
-    //     var n = fruits[r];
-    //     // document.write("Choosen[" + r + "]: " + n + "<br />");
-    //     // document.write("Array: " + fruits + "<br />");
-    //     return document.getElementById("fruits[r]").classList.add("oknum");
-
-    //     for (i = 0; i < fruits.length; i++) {
-    //       if (fruits[i] == n) {
-    //         fruits.splice(i, 1);
-    //         i--;
-    //       }
-    //     }
-    //   }
-    // }
 
 
   </script>
@@ -184,6 +184,7 @@
         <h6 class="gg h3">停止</h6>
     </button> -->
   </div>
+  
 </body>
 
 </html

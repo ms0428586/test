@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel=stylesheet type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <!-- <script>
+       function changeclass() {
+      var fruits = [
+      "n1", "n2", "n3", "n4",
+      "n5", "n6", "n7", "n8", "n9"
+    ];
+    var r = Math.floor(Math.random() * fruits.length);
+      var n = fruits[r];
+      return n;
+    }document.write(changeclass());
+    </script> -->
+    <style>
+        *{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	font-size: 10px;
+}
+.box{
+	float: left;
+	margin-top: 3vw;
+	margin-left: 4vw;
+	width: 28vw;
+	height: 28vw;
+	border-radius: 15px;
+	background-color: orange;
+}
+#btn1,#btn2{
+	width: 100vw;
+	height: 40px;
+	margin-top: 20px;
+	letter-spacing: 5px;
+	background-color:white;
+	color: orange;
+	border-color: orange;
+	/*outline: none;*/
+}
+#btn1:hover,#btn2:hover{
+	background-color:orange;
+	color: white;
+}
+    </style>
+    <script>
+       function begin(){
+	int=setInterval(changeColor,300);//设置定时器，每隔300毫秒执行一次函数changecolor();
+	function changeColor(){
+		function getColor(){
+			var color="#";
+			var arr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+			for (var i = 0; i < 6; i++) {
+				color=color+arr[Math.floor(Math.random()*16)]
+			}
+			return color;
+		}//<--随机获取十六进制颜色值
+		function num(){
+			var num;
+			var count=[1,2,3,4,5,6,7,8,9];
+			var num=count[Math.floor(Math.random()*9)];
+			return num;
+		}//<--随机获取1-9的数字;
+		var box=document.getElementsByClassName('box');
+		for (var j = 0; j < 3; j++) {
+			box[num()].style.backgroundColor=getColor();}
+		}//将随机色和随机数赋给九宫格中的三个;
+	}
+function end(){
+	var finish=clearInterval(int);
+}
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="change">
+		<button id="btn1" onclick="begin()">开始</button>
+		<button id="btn2" onclick="end()">结束</button>
+	</div>
+</body>
+
+</html>

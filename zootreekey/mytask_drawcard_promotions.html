@@ -57,7 +57,7 @@
     var num = randomImage.length;
     var timer
     function change() {
-      document.getElementById("oknum").innerHTML = '<img src="' + randomImage[GetRnd(0, num)] + '" style="width: 210px; height: 200px;">';
+      document.getElementById("figure").innerHTML = '<span><img src="' + randomImage[GetRnd(0, num)] + '" style="width: 210px; height: 200px;"></span>';
     }
     function start() {
       clearInterval(timer);
@@ -65,7 +65,7 @@
     }
     function ok() {
       clearInterval(timer);
-      document.getElementById("showresult").value = document.getElementById("oknum").innerText;
+      document.getElementById("showresult").value = document.getElementById("figure").innerText;
     }
     function GetRnd(min, max) {
       return Math.floor(Math.random() * randomImage.length);
@@ -109,63 +109,63 @@
   <br>
   <h1 class="dog text-center">活動吃</h1>
   <br>
-  <div class="container text-center">
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+  <div class="container text-center" id="nn">
+    <div class="row justify-content-md-center" id="nn1">
+      <div class="col col-lg-2" id="n1">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+      <div class="col col-lg-2" id="n2">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
-          <figcaption class="figure-caption"></figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
-          <figcaption class="figure-caption"></figcaption>
-        </figure>
-      </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
-          <figcaption class="figure-caption"></figcaption>
-        </figure>
-      </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+      <div class="col col-lg-2" id="n3">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
     </div>
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+    <div class="row justify-content-md-center" id="nn2">
+      <div class="col col-lg-2" id="n4">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+      <div class="col col-lg-2" id="n5">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
-      <div class="col col-lg-2">
-        <figure class="figure">
-          <span id="oknum"> <img src="img/logo_1.jpg" style="width: 210px; height: 200px;"> </span>
+      <div class="col col-lg-2" id="n6">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
+          <figcaption class="figure-caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row justify-content-md-center" id="nn3">
+      <div class="col col-lg-2" id="n7">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
+          <figcaption class="figure-caption"></figcaption>
+        </figure>
+      </div>
+      <div class="col col-lg-2" id="n8">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
+          <figcaption class="figure-caption"></figcaption>
+        </figure>
+      </div>
+      <div class="col col-lg-2" id="n9">
+        <figure id="figure">
+          <span id="oknum" > <img src="img/logo_2.png" style="width: 100px; height: 100px;"> </span>
           <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
