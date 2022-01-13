@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="../img/logo_2.png" />
+    <title>隨便吃幫你決定這一餐</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- bootstrap_css link-->
+    <link rel="stylesheet" href="../css/bootstrap01.min.css" type="text/css">
+    <!-- bootstrap_js link -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- my_css link  -->
+    <link rel="stylesheet" href="../css/style_01.css" type="text/css">
+    <link rel="stylesheet" href="../css/mytask.css" type="text/css">
+    <link rel=stylesheet type="text/css" href="css/main.css">
+    <!-- my_js-->
+    <script src="../js/main.js"></script>
+
+    <script src="js/drawcard_random.js"></script>
+    <script src="js/mytask_foodrecord.js"></script>
+
+</head>
+
+<body>
+    <div style="background-color: #f7f7f7;">
+        <div class="container">
+            <div class="mytask__blocks">
+                <div class="mytask__nav__block">
+                    <ul class="nav nav-tabs justify-content-center">
+                        <li class="mytask__instruction__nav nav-item">
+                            <a class="nav-link mytask__nav__text active" data-bs-toggle="tab" href="#mytask__instruction">任務說明</a>
+                        </li>
+                        <li class="mytask__drawcard__nav nav-item">
+                            <a class="nav-link mytask__nav__text" data-bs-toggle="tab" href="#mytask__drawcard">抽美食</a>
+                        </li>
+                        <li class="mytask_collect__nav nav-item">
+                            <a class="nav-link mytask__nav__text" data-bs-toggle="tab" href="#mytask__collect">任務收藏</a>
+                        </li>
+                        <li class="mytask_foodrecord__nav nav-item">
+                            <a class="nav-link mytask__nav__text" data-bs-toggle="tab" href="#mytask__foodrecord">美食紀錄</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mytask__items ">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active mytask__item  " id="mytask__instruction">
+                            <div class="mytask__item__title">
+                                <h1 class="mytask__item__title__text ">任務說明</h1>
+                            </div>
+                            <div class="mytask__item__block ">
+                                <div class="instruction__item justify-content-center">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-body-title">
+                                                <h5 class="dog card-title text-center">隨機吃</h5>
+                                                <hr>
+                                            </div>
+                                            <p class="card-text text-center">
+                                                不知道要吃什麼時，隨機吃隨機幫您決定一餐，省下您的思考時間， 也可透過自訂條件隨機吃，每訂餐成功即得可到一點數，收集20點可抽一次美食卡。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="instruction__item justify-content-center">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-body-title">
+                                                <h5 class="dog card-title text-center">優惠吃</h5>
+                                                <hr>
+                                            </div>
+                                            <p class="card-text text-center">
+                                                每日贈送一優惠卷，可到指定商店使用。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="instruction__item justify-content-center">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-body-title">
+                                                <h5 class="dog card-title text-center">活動吃</h5>
+                                                <hr>
+                                            </div>
+                                            <p class="card-text text-center">
+                                                指定餐廳內餐點隨機吃，點餐成功即獲得一拼圖，收集滿完整拼圖，可得到20點。
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="instruction__item justify-content-center">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-body-title">
+                                                <h5 class="dog card-title text-center">美食卡</h5>
+                                                <hr>
+                                            </div>
+                                            <p class="card-text text-center">
+                                                點數20點可抽一次，抽一次美食卡可隨機得到一拼圖， 收集完整拼圖即可得到一張美食卡，美食卡功能說明請 到任務收藏。
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane mytask__item " id="mytask__drawcard">
+
+                            <div class="drawcard__nav__block">
+                                <ul class="nav justify-content-center">
+                                    <li class="drawcard__nav nav-item">
+                                        <a class="nav-link drawcard__text active" data-bs-toggle="tab" href="#mytask_drawcard_random">隨機吃</a>
+                                    </li>
+                                    <li class="drawcard__nav nav-item">
+                                        <a class="nav-link drawcard__text" data-bs-toggle="tab" href="#mytask_drawcard_discount">優惠吃</a>
+                                    </li>
+                                    <li class="drawcard__nav nav-item">
+                                        <a class="nav-link drawcard__text" data-bs-toggle="tab" href="#mytask_drawcard_promotions">活動吃</a>
+                                    </li>
+                                    <li class="drawcard__nav nav-item">
+                                        <a class="nav-link drawcard__text" data-bs-toggle="tab" href="#mytask_drawcard_foodcard">美食卡</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mytask__item__block row">
+                                <div class="tab-content ">
+                                    <div class="tab-pane  fade show active drawcard__item  " id="mytask_drawcard_random">
+                                        <div class="mytask__item__title">
+                                            <h1 class="mytask__item__title__text ">隨機吃</h1>
+                                        </div>
+                                        <div class="drawcard_random">
+                                            <div class="container text-center">
+                                                <div class=" text-center">
+                                                    <figure class="figure">
+                                                        <span id="random_img"> <img src="img/logo_2.png"
+                                                                style="width: 100%; height: 100%;" class="img-fluid">
+                                                        </span>
+                                                    </figure>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="d-grid gap-1 col-2 mx-auto">
+                                                    <button type="button" class=" btn-good" onclick="random_start()">
+                                                        <h6 class="gg h3">吃起來</h6>
+                                                    </button>
+                                                    <button type="button" class=" btn-good" onclick="random_ok()">
+                                                        <h6 class="gg h3">就吃這個</h6>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane drawcard__item  " id="mytask_drawcard_discount">
+                                        <div class="mytask__item__title">
+                                            <h1 class="mytask__item__title__text ">優惠吃</h1>
+                                        </div>
+                                        <div class="drawcard_discount">
+                                            <div class="container text-center">
+                                                <div class=" text-center">
+                                                    <figure class="figure">
+                                                        <span id="discount_img"> <img src="img/logo_2.png"
+                                                                style="width: 100%; height: 100%;" class="img-fluid">
+                                                        </span>
+                                                    </figure>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="d-grid gap-1 col-2 mx-auto">
+                                                    <button type="button" class=" btn-good" onclick="discount_start()">
+                                                        <h6 class="gg h3">開始!</h6>
+                                                    </button>
+                                                    <button type="button" class=" btn-good" onclick="discount_ok()">
+                                                        <h6 class="gg h3">抽優惠券!</h6>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane drawcard__item  " id="mytask_drawcard_promotions">
+                                        <div class="mytask__item__title">
+                                            <h1 class="mytask__item__title__text ">活動吃</h1>
+                                            <div class="drawcard_promotions">
+                                                <div class="container text-center" id="promotions_card">
+                                                    <div class="row justify-content-md-center" id="nn1">
+                                                        <div class="col col-lg-2 " id="promotions_fruits01">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png "
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits02">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits03">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-md-center" id="nn2">
+                                                        <div class="col col-lg-2" id="promotions_fruits04">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits05">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits06">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-md-center" id="nn3">
+                                                        <div class="col col-lg-2" id="promotions_fruits07">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits08">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col col-lg-2" id="promotions_fruits09">
+                                                            <figure id="figure">
+                                                                <span id="oknum"> <img src="img/logo_2.png"
+                                                                        style="width: 100px; height: 100px;"
+                                                                        class="img-fluid"> </span>
+                                                                <figcaption class="figure-caption"></figcaption>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-grid gap-1 col-2 mx-auto">
+                                                    <button type="button" class=" btn-good" onclick="promotions_start()">
+                                                        <h6 class="gg h3">吃起來</h6>
+                                                    </button>
+                                                    <button type="button" class=" btn-good" onclick="promotions_ok()">
+                                                        <h6 class="gg h3">就吃這個</h6>
+                                                    </button>
+                                                    <button type="button" class=" btn-good" onclick="promotions_reset()">
+                                                        <h6 class="gg h3">重置</h6>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="tab-pane drawcard__item  " id="mytask_drawcard_foodcard">
+                                        <div class="mytask__item__title">
+                                            <h1 class="mytask__item__title__text ">美食卡</h1>
+                                        </div>
+                                        <div class="drawcard_foodcard">
+                                            <div class="container text-center" id="foodcard">
+                                                <div class="row justify-content-md-center" id="nn1">
+                                                    <div class="col col-lg-2 " id="foodcard_fruits01">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png "
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits02">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits03">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-md-center" id="nn2">
+                                                    <div class="col col-lg-2" id="foodcard_fruits04">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits05">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits06">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-md-center" id="nn3">
+                                                    <div class="col col-lg-2" id="foodcard_fruits07">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits08">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col col-lg-2" id="foodcard_fruits09">
+                                                        <figure id="figure">
+                                                            <span id="oknum"> <img src="img/logo_2.png"
+                                                                    style="width: 100px; height: 100px;"
+                                                                    class="img-fluid"> </span>
+                                                            <figcaption class="figure-caption"></figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-grid gap-1 col-2 mx-auto">
+                                                <button type="button" class=" btn-good" onclick="foodcard_start()">
+                                                    <h6 class="gg h3">吃起來</h6>
+                                                </button>
+                                                <button type="button" class=" btn-good" onclick="foodcard_ok()">
+                                                    <h6 class="gg h3">就吃這個</h6>
+                                                </button>
+                                                <button type="button" class=" btn-good" onclick="get_foodcard()">
+                                                    <h6 class="gg h3">換取卡片</h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane mytask__item " id="mytask__collect">
+                            <div class="mytask__item__title">
+                                <h1 class="mytask__item__title__text ">優惠卷
+                                    <h1>
+                            </div>
+                            <div class="mytask__item__block row">
+                                <div class="mytask__collect__item">
+                                    <div class="mytask__collect__row row">
+                                        <div class="points__count">
+                                            <h6 class="cat text-center">點數:0點 優惠卷:0張 美食卡:0張</h6>
+                                        </div>
+                                        <div class="mytask__collect__col col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid" alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mytask__collect__col col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid " alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mytask__collect__col  col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid " alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mytask__collect__item">
+                                    <div class="mytask__collect__item__title">
+                                        <h1 class="dog text-center">美食卡
+                                            <h1>
+                                    </div>
+                                    <div class="mytask__collect__row row">
+                                        <div class="mytask__collect__col col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid " alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mytask__collect__col col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid " alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mytask__collect__col  col">
+                                            <span style="text-align: center;">
+                                                <img src="img/logo_2.png" class="mycard img-fluid " alt="...">
+                                            </span>
+                                            <div class="card-body">
+                                                <h6 class="card-title">優惠卷名稱</h6>
+                                                <h6 class="card-subtitle mb-2 ">優惠卷說明</h6>
+                                                <h6 class="card-text">數量:1張</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane mytask__item " id="mytask__foodrecord">
+                            <div class="mytask__item__title">
+                                <h1 class="mytask__item__title__text ">美食紀錄</h1>
+                            </div>
+                            <div class="mytask__item__block row">
+                                <div class="addfoodrecord_and_datafilter__row row">
+                                    <div class="addfoodrecord col">
+                                        <a class="btnt" type="button" data-bs-toggle="modal" data-bs-target="#addinformation">新增內容</a>
+                                    </div>
+                                    <div class="data__filter col">
+                                        <input type="date" class="datefilter ">
+                                    </div>
+                                </div>
+                                <div class="mytask__foodrecord__item__block">
+                                    <div class="foodrecord__item" id="add_foodrecord_content">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal2 -->
+                            <div class="modal fade " id="addinformation">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content ">
+                                        <div class="modal-header ">
+                                            <h3>新增內容</h3>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body ">
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">店家</span>
+                                                <input type="text " class="form-control " placeholder="店家名稱 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">餐點</span>
+                                                <input type="text " class="form-control " placeholder="餐點名稱 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <label class="input-group-text " for="inputGroupSelect01 ">評分</label>
+                                                <select class="form-select " id="inputGroupSelect01 ">
+                                                    <option selected>我覺得...</option>
+                                                    <option value="1 ">超讚!</option>
+                                                    <option value="2 ">好吃!</option>
+                                                    <option value="3 ">普通!</option>
+                                                    <option value="3 ">不太行..</option>
+                                                    <option value="3 ">完全不行...</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">心得</span>
+                                                <input type="text " class="form-control " placeholder="心得內容 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <label class="input-group-text " for="inputGroupSelect01 ">任務方式</label>
+                                                <select class="form-select " id="inputGroupSelect01 ">
+                                                    <option selected>請選擇..</option>
+                                                    <option value="1 ">隨機吃</option>
+                                                    <option value="2 ">優惠吃</option>
+                                                    <option value="3 ">活動吃</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">日期</span>
+                                                <input type="date " class="form-control " placeholder="日期 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <input type="image " class="form-control " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                        </div>
+                                        <div class=" modal-footer">
+                                            <button type="button" class="btn-good" onclick="addfoodrecord()">儲存</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade " id="modifyinformation">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content ">
+                                        <div class="modal-header ">
+                                            <h3>修改內容</h3>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body ">
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">店家</span>
+                                                <input type="text " class="form-control " placeholder="店家名稱 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">餐點</span>
+                                                <input type="text " class="form-control " placeholder="餐點名稱 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <label class="input-group-text " for="inputGroupSelect01 ">評分</label>
+                                                <select class="form-select " id="inputGroupSelect01 ">
+                                                    <option selected>我覺得...</option>
+                                                    <option value="1 ">超讚!</option>
+                                                    <option value="2 ">好吃!</option>
+                                                    <option value="3 ">普通!</option>
+                                                    <option value="3 ">不太行..</option>
+                                                    <option value="3 ">完全不行...</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">心得</span>
+                                                <input type="text " class="form-control " placeholder="心得內容 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <label class="input-group-text " for="inputGroupSelect01 ">任務方式</label>
+                                                <select class="form-select " id="inputGroupSelect01 ">
+                                                    <option selected>請選擇..</option>
+                                                    <option value="1 ">隨機吃</option>
+                                                    <option value="2 ">優惠吃</option>
+                                                    <option value="3 ">活動吃</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <span class="input-group-text " id="basic-addon1 ">日期</span>
+                                                <input type="date " class="form-control " placeholder="日期 " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                            <div class="input-group mb-3 ">
+                                                <input type="image " class="form-control " aria-label="Username " aria-describedby="basic-addon1 ">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer ">
+                                            <button type="button " class="btn-good ">儲存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

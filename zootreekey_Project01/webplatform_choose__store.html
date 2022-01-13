@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="../img/logo_2.png" />
+    <title>隨便吃幫你決定這一餐</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- bootstrap_css link-->
+    <link rel="stylesheet" href="../css/bootstrap01.min.css" type="text/css">
+
+    <!-- bootstrap_js link -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- my_css link  -->
+    <link rel="stylesheet" href="../css/style_01.css" type="text/css">
+    <link rel="stylesheet" href="../css/choose__store.css" type="text/css">
+
+</head>
+
+<body>
+    <div style="background-color: #f7f7f7;">
+        <script src="../js/main.js"></script>
+
+        <div class="container my_container">
+            <div class="choose__store__information row">
+                <div class="choose__store__title__blocks ">
+                    <div class="choose__store__title__block ">
+                        <div class="choose__store__title-serch  col">
+                            <div class="choose__store__title">
+                                <h1 style="text-align: left;">Zootreekey</h1>
+                            </div>
+                            <div class="store__serch" style="text-align: left;">
+                                <input type="search" id="site-search" aria-label="Search through site content">
+                                <button>找餐廳</button>
+                            </div>
+                        </div>
+
+                        <div class="map__block col">
+                            <div class="map__img__item">
+                                <figure class="map__img__figure">
+                                    <img src="../img/map.png" class="map__img figure-img img-fluid rounded">
+                                    <figcaption class="figure-caption text-center"></figcaption>
+                                </figure>
+
+                                <!-- <span class="map__text__block">
+                                    <a class="map__text"> 開啟地圖</a></span> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="choose__store__block">
+                    <dvi class="store__category__warpper col-2">
+                        <div class="lane__wrapper">
+                            <div class="filter__lane">
+                                <div class="filter__block">
+                                    <div class="filter__tile">
+                                        <span class="nav-link" href="#">菜系</span>
+                                    </div>
+                                    <div class="filter__detail">
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_01" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">中式料理</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_02" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">美式料理</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_03" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">日式料理</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="filter__block">
+                                    <div class="filter__tile">
+                                        <span class="nav-link" href="#">料理類型</span>
+                                    </div>
+                                    <div class="filter__detail">
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_01" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">燒烤</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_02" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">火鍋</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox__item">
+                                            <input class="input" id="checkbox_03" type="checkbox">
+                                            <label class="label" for="checkbox_01">
+                                                <div class="filter__detail__name">
+                                                    <span class="">甜點</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </dvi>
+
+
+
+                    <div class="store__category__information col-10">
+                        <div class="store__category__land">
+                            <div class="store__category__title">
+                                <h4 style="display: inline;">周邊熱門餐廳</h4>
+                            </div>
+                            <div class="store__category__items ">
+                                <div class="store__img__block col-2" style="text-align: center;">
+                                    <img src="../img/食物照.jpeg" alt="惡魔雞排" class="img-fluid ">
+
+                                </div>
+                                <div class="store__information col-10 ">
+                                    <div class="store__name__information__item">
+                                        <div style="text-align: left;">
+                                            <p>餐廳名稱</p>
+                                        </div>
+                                    </div>
+                                    <div class="store__comment__block" style="text-align: left;">
+                                        <div class="col">
+                                            <p>評價</p>
+                                            <div style="text-align: left">
+                                                <p>分類</p>
+                                                <P>價位</P>
+                                            </div>
+                                        </div>
+
+                                        <div class="col" style="text-align: right;">
+                                            <p>位置/距離</p>
+                                        </div>
+                                    </div>
+                                    <div class="btn" style="text-align: right;">
+                                        <a href="../webplatform_choose__food.html" class="btn order__btn">點餐</a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
