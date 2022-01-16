@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,7 +32,7 @@
  <div style="border: solid 5px #6B7A8F;"class="box1">
 	<div class="container">
         <h3>隨意吃,登入</h3>
-        <form>
+        <form action="brad73.jsp">
             <div class="mb-3">
                 <label for="useraccount" class="form-label">帳號</label>
                 <input type="account" class="form-control" name="account" placeholder="輸入帳號" >
@@ -56,6 +56,3 @@
         <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
-
-

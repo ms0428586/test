@@ -28,28 +28,28 @@ public class UserRepositortyService {
 		return null;
 	}
 
-	public List<UserBean> select(UserBean bean) {
-		List<UserBean> result = null;
-		if(bean!=null && bean.getId()!=null && !bean.getId().equals(0)) {
-			Optional<UserBean> optional = userRespository.findById(bean.getId());
-			if(optional.isPresent()) {
-				result = new ArrayList<UserBean>();
-				result.add(optional.get());
-			}
-		} else {
-			result = userRespository.findAll();
-		}
-		return result;
-	}
-	
-	public UserBean insert (UserBean bean) {
-		UserBean result =null;
-		if(bean!=null&& bean.getId()!=null) {
-			boolean exist=userRespository.existsById(bean.getId());
-			if(!exist) {
-				return userRespository.save(bean);			
-		}
-	}
-	return result;
-}
+//	public List<UserBean> select(UserBean bean) {
+//		List<UserBean> result = null;
+//		if(bean!=null && bean.getId()!=null && !bean.getId().equals(0)) {
+//			Optional<UserBean> optional = userRespository.findById(bean.getId());
+//			if(optional.isPresent()) {
+//				result = new ArrayList<UserBean>();
+//				result.add(optional.get());
+//			}
+//		} else {
+//			result = userRespository.findAll();
+//		}
+//		return result;
+//	}
+//	
+//	public UserBean insert (UserBean bean) {
+//		UserBean result =null;
+//		if(bean!=null&& bean.getId()!=null) {
+//			boolean exist=userRespository.existsById(bean.getId());
+//			if(!exist) {
+//				return userRespository.save(bean);			
+//		}
+//	}
+//	return result;
+//}
 }

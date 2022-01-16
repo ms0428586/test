@@ -2,6 +2,7 @@ package controller;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
@@ -43,7 +44,7 @@ public class UserController {
 		
 		
 //呼叫model
-		UserBean bean = UserService.login(account,passwd);
+		Optional<UserBean> bean = UserService.login(account,passwd);
 		
 //根據model執行結果，導向view
 		if(bean==null) {

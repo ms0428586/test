@@ -10,9 +10,9 @@ import javax.persistence.Table;
 @Table(name="USER")	
 
 public class UserBean {
-	@Id
-	@Column(name="ID")
-	private Integer id;
+//	@Id
+//	@Column(name="ID")
+//	private Integer id;
 	
 	@Column (name="account")
 	private String account;
@@ -29,12 +29,12 @@ public class UserBean {
 	public String toString() {
 		return "CustomerBean [account=" + account + ", passwd=" + passwd + ", email=" + email + "]";
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+//	public Integer getId() {
+//		return id;
+//	}
+//	public void setId(Integer id) {
+//		this.id = id;
+//	}
 	public String getaccount() {
 		return account;
 	}
