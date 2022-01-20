@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+</head>
+<body>
+<table border="1">
+        <tr>
+            <th>id</th>
+            <th>shop</th>
+         	<th>meals</th>
+         	<th>score</th>
+         	<th>task</th>
+         	<th>date</th>
+
+        </tr>
+        
+        <tr th:each="muneInFo : ${menuInfos}">
+      		<td th:utext="${muneInFo.id}">..</td>
+      		<td th:utext="${muneInFo.shop}">..</td>
+            <td th:utext="${muneInFo.meals}">..</td>
+			<td th:utext="${muneInFo.score}">..</td>
+			<td th:utext="${muneInFo.task}">..</td>
+			<td th:utext="${muneInFo.date}">..</td>
+			
+        </tr>
+
+    </table>
+</body>
+</html>

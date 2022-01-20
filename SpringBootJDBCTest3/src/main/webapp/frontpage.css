@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+ /* frontpage*/
+ 
+ .city {
+     margin-left: 16px;
+     margin-right: 16px;
+     margin-bottom: 32px
+ }
+ 
+ .city__list {
+     list-style-type: none;
+     display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ .city__img {
+     height: 200px;
+ }
