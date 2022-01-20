@@ -16,28 +16,35 @@ public class AddMemberForm {
         System.out.println(newmemberName + " , " + newmemberPassword + " , "+newmemberEmail  );
       
     }
-    
-    
-    
-    
+
     public String getNewmemberName() {
         return newmemberName;
     }
+
     public void setNewmemberName(String newmemberName) {
         this.newmemberName = newmemberName;
     }
+
     public String getNewmemberPassword() {
         return newmemberPassword;
     }
+
     public void setNewmemberPassword(String newmemberPassword) {
         this.newmemberPassword = newmemberPassword;
     }
+
     public String getNewmemberEmail() {
         return newmemberEmail;
     }
+
     public void setNewmemberEmail(String newmemberEmail) {
         this.newmemberEmail = newmemberEmail;
     }
+    
+    
+    
+    
+
     
 
     

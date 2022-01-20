@@ -16,7 +16,7 @@ public class MemberDAO extends JdbcDaoSupport{
 
     public void AddMember(String newmemberName ,String newmemberPassword,String newmemberEmail) {
         System.out.println("SQL-----------");
-        String sqlInsert ="INSERT INTO memberInfo(name,password,email) VALUES (?,?,?)";
+        String sqlInsert ="INSERT INTO memberinfo(name,password,email) VALUES (?,?,?)";
         this.getJdbcTemplate().update(sqlInsert,newmemberName,newmemberPassword,newmemberEmail);
         System.out.println("SQL-----------");
     }

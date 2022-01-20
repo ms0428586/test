@@ -23,7 +23,7 @@ public class MyController {
 	private MenuDAO menuDAO;
 	
 	@Autowired
-    private MemberDAO memberDAO;
+    private MemberDAO memberDAO;  
 	
 //	取得資料庫資料渲染在頁面
 	@RequestMapping(value = "/menutest", method = RequestMethod.GET)
@@ -34,7 +34,7 @@ public class MyController {
 
 		return "menutest";
 	}
-//	新增商品頁面 預設值
+	//新增商品頁面 預設值
 	@RequestMapping(value = "/test1", method = RequestMethod.GET)
 	public String viewtest1(Model model) {
 
@@ -139,11 +139,17 @@ public class MyController {
 		return "memberCentre_login";
 	}
 
-	@RequestMapping(value = "/memberCentre_regist", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberCentre_regist")
     public String viewmemberCentre_regist(Model model) {
-
+	    
         return "memberCentre_regist";
     }
+	 @RequestMapping(value = "/memberCentre_regist", method = RequestMethod.GET)
+  public String viewmemberForm(Model model,@ModelAttribute("addMemberForm") AddMemberForm addMemberForm ) {
+
+//        新增商品    AddMenuForm取得頁面表單資料放入快取 也可給預設
+      return "memberCentre_regist";
+	 }
 //  處理表單送來的資料
     @RequestMapping(value = "/memberCentre_regist", method = RequestMethod.POST)
     public String processAddMember(Model model, @ModelAttribute("addMemberForm") AddMemberForm addMemberForm) {

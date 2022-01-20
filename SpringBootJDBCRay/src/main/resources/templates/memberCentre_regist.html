@@ -36,11 +36,11 @@
             <form class="table"  th:action="@{/memberCentre_regist}" th:object="${addMemberForm}" method="POST">
                 <div class="mb-3">
                     <label for="useraccount" class="form-label">帳號</label>
-                    <input type="account" class="form-control" id="useraccount" placeholder="輸入帳號" required >
+                    <input type="text"  class="form-control" id="name" placeholder="輸入帳號"  th:field="*{newmemberName}">
                 </div>
                 <div class="mb-3">
                     <label for="userpasswd" class="form-label">密碼</label>
-                    <input type="password" class="form-control" id="userpasswd" placeholder="輸入密碼" required  th:field="*{newmemberPassword}">
+                    <input type="password"  class="form-control" id="passwd" placeholder="輸入密碼" required th:field="*{newmemberPassword}">
                 </div>
                 <!--  
                 <div class="mb-3">
@@ -50,7 +50,7 @@
                 -->
                 <div class="mb-3">
                     <label for="useremail" class="form-label">電子郵件</label>
-                    <input type="email" class="form-control" id="useremail" placeholder="輸入電子郵件" required  >
+                    <input type="text" class="form-control" id="email" placeholder="輸入電子郵件" required  th:field="*{newmemberEmail}">
                 </div>
                 <input type="checkbox"> 請詳閱 <a href="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/Aurora/Docs/Rule.html">使用者規章 </a>並勾選表示同意遵守其內容
                 <br>
