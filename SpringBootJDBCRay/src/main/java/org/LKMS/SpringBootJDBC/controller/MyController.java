@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.LKMS.SpringBootJDBC.dao.MemberDAO;
 import org.LKMS.SpringBootJDBC.dao.MenuDAO;
-import org.LKMS.SpringBootJDBC.exception.BankTransactionException;
+import org.LKMS.SpringBootJDBC.dao.updatemenuDAO;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.form.AddMenuForm;
-
+import org.LKMS.SpringBootJDBC.form.updateMenuForm;
 import org.LKMS.SpringBootJDBC.model.MenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,9 +25,12 @@ public class MyController {
 	@Autowired
     private MemberDAO memberDAO;  
 	
+	@Autowired
+	private updatemenuDAO updatemenuDAO;
+	
 //	取得資料庫資料渲染在頁面
 	@RequestMapping(value = "/menutest", method = RequestMethod.GET)
-	public String showBankAccounts(Model model) {
+	public String showBankAccounts(Model model, @ModelAttribute("updateMenuForm") updateMenuForm updateMenuForm) {
 
 		List<MenuInfo> list = menuDAO.getMenu();
 		model.addAttribute("menuInfos", list);
@@ -60,6 +63,25 @@ public class MyController {
 				NewProductCategory);
 		return "redirect:/menutest";  //送出後頁面挑轉到哪裡
 	}
+//  處理表單送來的資料
+    @RequestMapping(value = "/menutest/updateFrom", method = RequestMethod.POST)
+    public String processupdateMenu(Model model, @ModelAttribute("updateMenuForm") updateMenuForm updateMenuForm) {
+        
+        Long NewId = updateMenuForm.getNewid();
+        String NewProductCode = updateMenuForm.getNewproductCode();
+        String NewProductName = updateMenuForm.getNewproductName();
+        String NewProductSize = updateMenuForm.getNewproductSize();
+        Double NewProductPrice = updateMenuForm.getNewproductPrice();
+        String NewProductDescription = updateMenuForm.getNewproductDescription();
+        
+ 
+        System.out.println(NewId + "processAddMenu-----------");
+//      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
+        updatemenuDAO.updateMenu(NewId, NewProductCode, NewProductName, NewProductSize, NewProductPrice, NewProductDescription
+                );
+
+        return "redirect:/menutest";
+    }
 	
 ////	以下是我用我們的網頁測試 還沒成功 可以參考
 ////	取得資料庫資料渲染在頁面
