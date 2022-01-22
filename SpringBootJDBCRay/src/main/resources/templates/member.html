@@ -78,7 +78,7 @@
                         <div class="member_title text-center">
                             <h1><strong><span class="basic_information_01">基本資料</span></strong></h1>
                         </div>
-                        <div class="container">
+                        <div class="container"   th:each="muneInFo : ${SelectMemberInfo}">
                             <div class="row justify-content-center">
                                 <div class="col-2 align-self-end text-center ">點數</div>
                                 <div class="col-2 align-self-end text-center ">英雄卡</div>
@@ -87,20 +87,21 @@
                             </div>
                             <div class="basic_information_warpper mx-auto">
 
-                                <div class="basic_information_item row ">
+                                <div class="basic_information_item row "  >
                                     <div class="col-4 align-self-center  text-center ">
                                         <h2> 姓名 : </h2>
                                     </div>
-                                    <div class="col-8 align-self-center">
-                                        <h4> <span class="name">12345</span> </h4>
+                                    <div class="col-8 align-self-center"  >
+                                        <h4 th:utext="${muneInFo.newmemberName}"> </h4>
                                     </div>
                                 </div>
+                                
                                 <div class="basic_information_item row ">
                                     <div class="col-4 align-self-center text-center ">
                                         <h2>信箱 : </h2>
                                     </div>
                                     <div class="col-8 align-self-center text-truncate ">
-                                        <h4> <span class="email">walter8077616@gmail.com</span> </h4>
+                                        <h4 th:utext="${muneInFo.newmemberEmail}">  </h4>
                                     </div>
                                 </div>
 
@@ -109,7 +110,7 @@
                                         <h2>電話 : </h2>
                                     </div>
                                     <div class="col-8 align-self-center">
-                                        <h4> <span class="cellphone">0987654321</span> </h4>
+                                        <h4 th:utext="${muneInFo.newmemberPhone}">  </h4>
                                     </div>
                                 </div>
 
@@ -123,7 +124,8 @@
                                     </div>
                                 </div>
                                 <!-- MODAL1 -->
-                                <div class="modal fade" id="editinformation">
+                                <form th:action="@{/member/updateMember}"  th:object="${updateMemberInfo}" method="POST"> 
+                                <div class="modal fade" id="editinformation" >
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -132,25 +134,27 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="input-group mb-3">
-                                                    <span class="input-group-text" id="basic-addon1">姓名</span>
-                                                    <input type="text" class="form-control" placeholder="姓名" aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
+                                                    <span class="input-group-text" id="basic-addon1" >姓名</span>
+                                                    <input type="text" class="form-control" placeholder="請輸入更改姓名" aria-label="Username" aria-describedby="basic-addon1"  th:field="*{updatememberName}" >
+                                                </div> 
                                                 <div class="input-group mb-3">
-                                                    <span class="input-group-text" id="basic-addon1">信箱</span>
-                                                    <input type="text" class="form-control" placeholder="__@" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <span class="input-group-text" id="basic-addon1" >信箱</span>
+                                                    <input type="text" class="form-control"  placeholder="請輸入更改信箱" aria-label="Username" aria-describedby="basic-addon1"  th:field="*{updatememberEmail}">
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">電話</span>
-                                                    <input type="text" class="form-control" placeholder="手機號碼" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="請輸入更改號碼" aria-label="Username" aria-describedby="basic-addon1"  th:field="*{updatememberPhone}">
                                                 </div>
                                                 <div class=" modal-footer">
-                                                    <button type="button" class="btn-good ">儲存</button>
+                                                    <button type="submit" class="btn-good ">儲存</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                              </form>
                                 <!-- MODAL2 -->
+                                 <form th:action="@{/member/updatePsw}"  th:object="${updatePsw}" method="POST"> 
                                 <div class="modal fade" id="editpassword">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -159,26 +163,26 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="input-group mb-3">
+                                                <!-- <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">輸入舊密碼</span>
                                                     <input type="text" class="form-control" placeholder="舊密碼" aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
+                                                </div> -->
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">設定新密碼</span>
-                                                    <input type="text" class="form-control" placeholder="新密碼" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="password" class="form-control" placeholder="新密碼" aria-label="Username" aria-describedby="basic-addon1" th:field="*{updatePsw}">
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">再次確認新密碼</span>
-                                                    <input type="text" class="form-control" placeholder="確認新密碼" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="password" class="form-control" placeholder="確認新密碼" aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                                 <div class=" modal-footer">
-                                                    <button type="button" class="btn-good ">儲存</button>
+                                                    <button type="submit" class="btn-good ">儲存</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+							</form>
                             </div>
                         </div>
                     </div>

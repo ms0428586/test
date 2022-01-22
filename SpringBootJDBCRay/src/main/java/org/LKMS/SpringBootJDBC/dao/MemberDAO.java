@@ -14,10 +14,10 @@ public class MemberDAO extends JdbcDaoSupport{
         this.setDataSource(dataSource);
     }
 
-    public void AddMember(String newmemberName ,String newmemberPassword,String newmemberEmail) {
+    public void AddMember(String newmemberName ,String newmemberPassword,String newmemberPhone,String newmemberEmail) {
         System.out.println("SQL-----------");
-        String sqlInsert ="INSERT INTO memberinfo(name,password,email) VALUES (?,?,?)";
-        this.getJdbcTemplate().update(sqlInsert,newmemberName,newmemberPassword,newmemberEmail);
+        String sqlInsert ="INSERT INTO memberinfo(name,password,phone,email) VALUES (?,?,?,?)";
+        this.getJdbcTemplate().update(sqlInsert,newmemberName,newmemberPassword,newmemberPhone,newmemberEmail);
         System.out.println("SQL-----------");
     }
 }

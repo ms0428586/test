@@ -4,10 +4,16 @@ import java.util.List;
 
 import org.LKMS.SpringBootJDBC.dao.MemberDAO;
 import org.LKMS.SpringBootJDBC.dao.MenuDAO;
+import org.LKMS.SpringBootJDBC.dao.SelectMemberDAO;
+import org.LKMS.SpringBootJDBC.dao.UpdatePswDAO;
+import org.LKMS.SpringBootJDBC.dao.updateMemberInfoDAO;
 import org.LKMS.SpringBootJDBC.dao.updatemenuDAO;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.form.AddMenuForm;
+import org.LKMS.SpringBootJDBC.form.SelectMemberInfo;
+import org.LKMS.SpringBootJDBC.form.updateMemberInfo;
 import org.LKMS.SpringBootJDBC.form.updateMenuForm;
+import org.LKMS.SpringBootJDBC.form.updatePsw;
 import org.LKMS.SpringBootJDBC.model.MenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +27,16 @@ import org.thymeleaf.standard.expression.Each;
 public class MyController {
 	@Autowired
 	private MenuDAO menuDAO;
-	
 	@Autowired
     private MemberDAO memberDAO;  
-	
 	@Autowired
 	private updatemenuDAO updatemenuDAO;
+	@Autowired
+	private SelectMemberDAO selectMemberDAO;
+	@Autowired
+	private updateMemberInfoDAO  updateMemberInfoDAO;
+	@Autowired
+	private UpdatePswDAO updatePswDAO;
 	
 //	取得資料庫資料渲染在頁面
 	@RequestMapping(value = "/menutest", method = RequestMethod.GET)
@@ -149,11 +159,46 @@ public class MyController {
 	}
 //   member-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(value = "/member", method = RequestMethod.GET)
-	public String viewmember(Model model) {
+	// 取得資料庫資料渲染在頁面
+    @RequestMapping(value = "/member", method = RequestMethod.GET)
+    public String showMemberInfo(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo,@ModelAttribute("updatePsw") updatePsw updatePsw) {
 
-		return "member";
-	}
+        List<SelectMemberInfo> list = selectMemberDAO.getMemberInfo();
+        model.addAttribute("SelectMemberInfo", list);
+
+        return "member";
+    }
+//    @RequestMapping(value = "/member/updateMember", method = RequestMethod.GET)
+//    public String showupdateMember(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo) {
+//
+//        return "member";
+//    }
+//  處理表單送來的資料
+    @RequestMapping(value = "/member/updateMember", method = RequestMethod.POST)
+    public String processupdateMember(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo) {
+        
+        String UpdateMemberName = updateMemberInfo.getUpdatememberName();
+        String UpdateMemberEmail = updateMemberInfo.getUpdatememberEmail();
+        String UpdateMemberPhone = updateMemberInfo.getUpdatememberPhone();
+        
+ 
+        System.out.println(updateMemberInfo + "processAddMenu-----------");
+//      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
+        updateMemberInfoDAO.updateMember( UpdateMemberName,UpdateMemberEmail, UpdateMemberPhone );
+
+        return "redirect:/member";
+    }
+    @RequestMapping(value = "/member/updatePsw", method = RequestMethod.POST)
+    public String processupdatePsw(Model model, @ModelAttribute("updatePsw") updatePsw updatePsw) {
+        
+        String UpdatePsw = updatePsw.getUpdatePsw();
+ 
+        System.out.println(updatePsw + "processAddMenu-----------");
+//      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
+        updatePswDAO.updatePsw( UpdatePsw );
+
+        return "redirect:/member";
+    }
 
 	@RequestMapping(value = "/memberCentre_login", method = RequestMethod.GET)
 	public String viewmemberCentre_login(Model model) {
@@ -179,10 +224,11 @@ public class MyController {
         String NewMemberName = addMemberForm.getNewmemberName();
         String NewMemberPassword = addMemberForm. getNewmemberPassword();
         String NewMemberEmail = addMemberForm.getNewmemberEmail();
+        String NewMemberPhone = addMemberForm.getNewmemberPhone();
  
         System.out.println(NewMemberName + "processAddMenu-----------");
 //      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
-        memberDAO.AddMember(NewMemberName, NewMemberPassword, NewMemberEmail);
+        memberDAO.AddMember(NewMemberName, NewMemberPassword,NewMemberPhone, NewMemberEmail);
 
 		return "redirect:/memberCentre_login";
 	}
