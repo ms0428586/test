@@ -173,14 +173,25 @@ public class MyController {
 //
 //        return "member";
 //    }
+//    @RequestMapping(value = "/member/updateMember", method = RequestMethod.GET)
+//    public String viewupdateMember(Model model) {
+//
+////      新增商品    AddMenuForm取得頁面表單資料放入快取 也可給預設值 
+//        updateMemberInfo menuform = new updateMemberInfo("004", "純喫茶", "小");
+//        model.addAttribute("updateMemberInfo", menuform);
+//
+//        return "member";
+//    }
 //  處理表單送來的資料
     @RequestMapping(value = "/member/updateMember", method = RequestMethod.POST)
     public String processupdateMember(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo) {
         
+        updateMemberInfo menuform = new updateMemberInfo("004", "純喫茶", "小");
+        model.addAttribute("updateMemberInfo", menuform);
+ 
         String UpdateMemberName = updateMemberInfo.getUpdatememberName();
         String UpdateMemberEmail = updateMemberInfo.getUpdatememberEmail();
         String UpdateMemberPhone = updateMemberInfo.getUpdatememberPhone();
-        
  
         System.out.println(updateMemberInfo + "processAddMenu-----------");
 //      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
