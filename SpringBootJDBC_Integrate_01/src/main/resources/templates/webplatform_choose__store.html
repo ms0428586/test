@@ -34,9 +34,13 @@
                                 <h1 style="text-align: left;">Zootreekey</h1>
                             </div>
                             <div class="store__serch" style="text-align: left;">
-                                <input type="search" id="site-search" aria-label="輸入餐廳關鍵字">th:field="*{searchStore}"
-                                <button type="submit">找餐廳</button>
-                            </div>
+                            <form class="table" th:action="@{/webplatform_choose__store}"
+											th:object="${searchStoreForm}" method="POST">
+                                <input type="search" id="site-search" aria-label="輸入餐廳關鍵字"
+                                th:field="*{searchStore}">
+                                <button type="submit">找餐廳</button> 
+                               </form>
+                            </div>               
                         </div>
 
                         <div class="map__block col">
@@ -131,9 +135,39 @@
                                 <h4 style="display: inline;">周邊熱門餐廳</h4>
                             </div>
                             <div class="store__category__items ">
-                                <div class="store__img__block col-2" style="text-align: center;">
+                                <div class="store__img__block col-2" style="text-align: center;"th:each="storeInFo : ${storeInfos}">
                                     <img src="../img/食物照.jpeg"  alt="惡魔雞排" class="img-fluid ">
-
+									<div class="menu__content" >
+										<div class="menu__informantion__row row">
+											<div class="menu__img col">
+												<a href=""> <img src="../img/食物照.jpeg" alt="惡魔雞排"
+													class="food__img">
+												</a>
+											</div>
+											<div class="menu__detailed col">
+												<div class="row">
+													<div class="row">
+														<p class="col">餐廳名稱:</p>
+														<p class="col" th:utext="${storeInFo.storeName}">...</p>
+													</div>
+													<div class="row">
+														<p class="col">分類:</p>
+														<p class="col" th:utext="${storeInFo.storeCategory}">...</p>
+													</div>
+													<div class="row">
+														<p class="col">地址:</p>
+														<p class="col" th:utext="${storeInFo.storeAddress}">...</p>
+													</div>
+													<div class="row">
+														<p class="col">電話:</p>
+														<p class="col" th:utext="${storeInFo.storePhone}">...</p>
+													</div>
+													<div class="row">
+														<p class="col">營業時間:</p>
+														<p class="col" th:utext="${storeInFo.storeHours}">...</p>
+													</div>
+												</div>
+											</div>
                                 </div>
                                 <div class="store__information col-10 ">
                                     <div class="store__name__information__item">

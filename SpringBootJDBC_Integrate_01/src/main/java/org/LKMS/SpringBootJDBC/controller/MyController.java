@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.LKMS.SpringBootJDBC.dao.MemberDAO;
 import org.LKMS.SpringBootJDBC.dao.MenuDAO;
+import org.LKMS.SpringBootJDBC.dao.StoreDAO;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.form.AddMenuForm;
 import org.LKMS.SpringBootJDBC.model.MenuInfo;
+import org.LKMS.SpringBootJDBC.model.StoreInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MyController {
 	@Autowired
 	private MenuDAO menuDAO;
+	
+	@Autowired
+	private StoreDAO storeDAO;
 
 	@Autowired
     private MemberDAO memberDAO;
@@ -51,13 +56,27 @@ public class MyController {
 		return "redirect:/store__management";
 	}
 	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.GET)
-	public String viewChoosestore Model model) {
+	public String viewChoosestore( Model model2) {
 //		MENU
-		List<MenuInfo> list = menuDAO.getMenu();
-		model.addAttribute("menuInfos", list);
-		
+		List<StoreInfo> list = storeDAO.getStore();
+		model2.addAttribute("storeInfos", list);
+
 		return "webplatform_choose__store";
 	}
+//	@RequestMapping(value = "/store__management", method = RequestMethod.POST)
+//	public String AddMenu(Model model, @ModelAttribute("addMenuForm") AddMenuForm addMenuForm) {
+//		String NewId = addMenuForm.getNewid();
+//		String NewProductName = addMenuForm.getNewproductName();
+//		String NewProductSize = addMenuForm.getNewproductSize();
+//		Double NewProductPrice = addMenuForm.getNewproductPrice();
+//		String NewProductCategory = addMenuForm.getNewproductCategory();
+//		String NewProductDescription = addMenuForm.getNewproductDescription();
+//		System.out.println(NewId + "AddMenu-----------");
+//
+//		menuDAO.AddMenu(NewId, NewProductName, NewProductSize, NewProductPrice,
+//				NewProductCategory, NewProductDescription);
+//
+//		return "redirect:/store__management";
 //	以下是我們的網頁連結
 	// frontpage--mytask--webplatform---------------------------------------------------------------------------------------------------------------------------------------------------
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -72,11 +91,11 @@ public class MyController {
 		return "mytask";
 	}
 
-	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.GET)
-	public String viewwebplatform_choose__store(Model model) {
-
-		return "webplatform_choose__store";
-	}
+//	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.GET)
+//	public String viewwebplatform_choose__store(Model model) {
+//
+//		return "webplatform_choose__store";
+//	}
 
 	@RequestMapping(value = "/webplatform_choose__food", method = RequestMethod.GET)
 	public String viewwebplatform_choose__food(Model model) {
