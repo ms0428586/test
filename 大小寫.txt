@@ -1,0 +1,34 @@
+shoppingcart
+ 
+ menu
+
+  ID
+  PRODUCTS_CODE
+  PRODUCTS_NAME
+  PRODUCTS_SIZE
+  PRODUCTS_PRICE
+  PRODUCTS_CATEGORY
+  PRODUCTS_DESCRIPTION
+
+mytask
+ 
+ record
+
+  STORE
+  MEALS
+  SCORE
+  EXPERIENCE
+  TASK
+  DATE
+ Store
+  Meals
+  Score
+  Experience
+  Task
+  Date
+store
+  meals
+  score
+  experience
+  task
+  date
