@@ -1,0 +1,107 @@
+.card_size {
+    align-self: center;
+}
+
+.mytask__nav__block {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.mytask__item__title__text {
+    color: #f7882f;
+    font-weight: 900;
+    text-align: center;
+}
+
+.mytask__item__title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mytask__blocks {
+    margin-bottom: 45px;
+    padding-bottom: 40px;
+}
+
+
+/* instruction css */
+
+.instruction__item {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 40px;
+}
+
+
+/* collect css */
+
+.mytask__collect__row {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+.mytask__collect__col {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    background-color: #ffffff;
+}
+
+.mycard {
+    height: 150px;
+}
+
+
+/* foodrecord css */
+
+.addfoodrecord_and_datafilter__row {
+    padding-bottom: 20px;
+}
+
+.datefilter {
+    margin-left: 100px;
+}
+
+.data__filter {
+    text-align: right;
+}
+
+.edit_btn_row {
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.foodrecord__item {
+    border: 1px solid rgba(0, 0, 0, .125);
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.mytask__foodrecord__img {
+    align-self: center;
+}
+
+
+/* drawcard__random css */
+
+#oknum {
+    display: block;
+    margin: auto;
+    animation: pictureChange ease 10s infinite;
+}
+
+@keyframes pictureChange {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
