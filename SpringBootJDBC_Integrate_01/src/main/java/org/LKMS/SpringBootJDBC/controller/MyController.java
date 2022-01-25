@@ -7,6 +7,7 @@ import org.LKMS.SpringBootJDBC.dao.MenuDAO;
 import org.LKMS.SpringBootJDBC.dao.StoreDAO;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.form.AddMenuForm;
+import org.LKMS.SpringBootJDBC.form.SearchStoreForm;
 import org.LKMS.SpringBootJDBC.model.MenuInfo;
 import org.LKMS.SpringBootJDBC.model.StoreInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,28 +56,31 @@ public class MyController {
 
 		return "redirect:/store__management";
 	}
+	
 	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.GET)
-	public String viewChoosestore( Model model2) {
+	public String viewChoosestore( Model model ) {
 //		MENU
 		List<StoreInfo> list = storeDAO.getStore();
-		model2.addAttribute("storeInfos", list);
+		model.addAttribute("storeInfo", list);
+
 
 		return "webplatform_choose__store";
 	}
-//	@RequestMapping(value = "/store__management", method = RequestMethod.POST)
-//	public String AddMenu(Model model, @ModelAttribute("addMenuForm") AddMenuForm addMenuForm) {
-//		String NewId = addMenuForm.getNewid();
-//		String NewProductName = addMenuForm.getNewproductName();
-//		String NewProductSize = addMenuForm.getNewproductSize();
-//		Double NewProductPrice = addMenuForm.getNewproductPrice();
-//		String NewProductCategory = addMenuForm.getNewproductCategory();
-//		String NewProductDescription = addMenuForm.getNewproductDescription();
-//		System.out.println(NewId + "AddMenu-----------");
-//
-//		menuDAO.AddMenu(NewId, NewProductName, NewProductSize, NewProductPrice,
-//				NewProductCategory, NewProductDescription);
-//
-//		return "redirect:/store__management";
+	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.POST)
+	public String processViewChoosestore(Model model2, @ModelAttribute("searchStoreFrom") SearchStoreForm searchStoreFrom) {
+		SearchStoreForm storeform = new SearchStoreForm("");
+		model.addAttribute("searchStoreForm", storeform); 
+		
+		String NewSearch = searchStoreFrom.getsearchStore();
+		System.out.println(NewSearch);
+
+		storeDAO.processViewChoosestore(NewSearch);
+
+		return "redirect:webplatform_choose__store";
+	}
+	
+	
+	
 //	以下是我們的網頁連結
 	// frontpage--mytask--webplatform---------------------------------------------------------------------------------------------------------------------------------------------------
     @RequestMapping(value = "/", method = RequestMethod.GET)
