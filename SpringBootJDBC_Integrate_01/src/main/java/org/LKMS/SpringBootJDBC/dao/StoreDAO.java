@@ -16,7 +16,6 @@ public class StoreDAO extends JdbcDaoSupport{
 	public StoreDAO (DataSource dataSource) {
 		this.setDataSource(dataSource);
 	}
-	@SuppressWarnings("deprecation")
 	public List<StoreInfo> getStore() {
 
 		String sql = StoreMapper.BASE_SQL;
@@ -27,6 +26,6 @@ public class StoreDAO extends JdbcDaoSupport{
 
 		return list;
 	}
-	SELECT ST.STORE_CATEGORYS,ST.STORE_NAMES,ST.STORE_ADDRESS,ST.STORE_PHONE,ST.STORE_HOURS FROM store_test01 ST WHERE ST.STORE_CATEGORYS,ST.STORE_NAMES LIKE'%?%'
+//	SELECT ST.STORE_CATEGORYS,ST.STORE_NAMES,ST.STORE_ADDRESS,ST.STORE_PHONE,ST.STORE_HOURS FROM store_test01 ST WHERE ST.STORE_CATEGORYS,ST.STORE_NAMES LIKE'%?%'
 
 }

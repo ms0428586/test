@@ -20,45 +20,45 @@ public class StoreInfo {
         System.out.println( storeCategory +" , "+storeName +" , "+ storeAddress+", "+storePhone+ " , "+storeHours );
 		
 	}
-//	public String getstoreId() {
-//		return storeId;
-//	}
-//
-//	public void setstoreId(String storeId) {
-//		this.storeId = storeId;
-//	}
-       public String getstoreCategory() {
-        return storeCategory;
-    }
-    public void setstoreCategory(String storeCategory) {
-        this.storeCategory = storeCategory;
-    }
 
-    public String storeName() {
-        return storeName;
-    }
-    public void setstoreName(String storeName) {
-        this.storeName = storeName;
-    }
-    
-    public String getstoreAddress() {
-        return storeAddress;
-    }
-    public void setstoreAddress(String storeAddress) {
-        this.storeAddress = storeAddress;
-    }
+	public String getStoreCategory() {
+		return storeCategory;
+	}
 
-    public String getstorePhone() {
-        return storePhone;
-    }
-    public void setstorePhone(String storePhone) {
+	public void setStoreCategory(String storeCategory) {
+		this.storeCategory = storeCategory;
+	}
+
+	public String getStoreName() {
+		return storeName;
+	}
+
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
+	}
+
+	public String getStoreAddress() {
+		return storeAddress;
+	}
+
+	public void setStoreAddress(String storeAddress) {
+		this.storeAddress = storeAddress;
+	}
+
+	public String getStorePhone() {
+		return storePhone;
+	}
+
+	public void setStorePhone(String storePhone) {
 		this.storePhone = storePhone;
 	}
-    public String getstoreHours() {
-        return storeHours;
-    }
-    public void setstoreHours(String storeHours) {
-        this.storeHours = storeHours;
-    }
-  
+
+	public String getStoreHours() {
+		return storeHours;
+	}
+
+	public void setStoreHours(String storeHours) {
+		this.storeHours = storeHours;
+	}
+
 }

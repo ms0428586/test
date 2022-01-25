@@ -61,20 +61,22 @@ public class MyController {
 	public String viewChoosestore( Model model ) {
 //		MENU
 		List<StoreInfo> list = storeDAO.getStore();
-		model.addAttribute("storeInfo", list);
-
+		model.addAttribute("storeInfos", list);
+		
+		SearchStoreForm searchStoreForm = new SearchStoreForm("火鍋");
+		model.addAttribute("searchStoreForm", searchStoreForm); 
 
 		return "webplatform_choose__store";
 	}
 	@RequestMapping(value = "/webplatform_choose__store", method = RequestMethod.POST)
-	public String processViewChoosestore(Model model2, @ModelAttribute("searchStoreFrom") SearchStoreForm searchStoreFrom) {
-		SearchStoreForm storeform = new SearchStoreForm("");
-		model.addAttribute("searchStoreForm", storeform); 
+	public String processViewChoosestore(Model model, @ModelAttribute("searchStoreFrom") SearchStoreForm searchStoreFrom) {
+		SearchStoreForm searchStoreForm = new SearchStoreForm("火鍋");
+		model.addAttribute("searchStoreForm", searchStoreForm); 
 		
-		String NewSearch = searchStoreFrom.getsearchStore();
-		System.out.println(NewSearch);
-
-		storeDAO.processViewChoosestore(NewSearch);
+//		String NewSearch = searchStoreFrom.getsearchStore();
+//		System.out.println(NewSearch);
+//
+//		storeDAO.processViewChoosestore(NewSearch);
 
 		return "redirect:webplatform_choose__store";
 	}
