@@ -19,31 +19,36 @@ public class MemberLoginDAO  extends JdbcDaoSupport{
     public MemberLoginDAO(DataSource dataSource) {
         this.setDataSource(dataSource);
     }
-	
-	public List<MemberLogin> findByAccount(String newmemberAccount) {
-        System.out.println("SQL-----------");
-        String sql = MemberLoginMapper.BASE_SQL;
-
-		Object[] params = new Object[] { newmemberAccount };
-		MemberLoginMapper mapper = new MemberLoginMapper();
-		try {
-			List<MemberLogin> bankAccount = this.getJdbcTemplate().query(sql, params, mapper);
-			System.out.println("SQL-----------");
-			return bankAccount;
-		} catch (EmptyResultDataAccessException e) {
-			return null;
-		}
-    }
-	public List<MemberLogin> findPassword(String newmemberPassword) {
+//	public void findPassword(String findPassword) {
+//        System.out.println("SQL-----------");
+//        String sql="SELECT password FROM memberinfo WHERE account=?'";
+//        this.getJdbcTemplate().query(sql,findPassword);
+//        System.out.println("SQL-----------");
+//    }
+//	public List<MemberLogin> findByAccount(String newmemberAccount) {
+//        System.out.println("SQL-----------");
+//        String sql = MemberLoginMapper.BASE_SQL;
+//
+//		Object[] params = new Object[] { newmemberAccount };
+//		MemberLoginMapper mapper = new MemberLoginMapper();
+//		try {
+//			List<MemberLogin>loginAccount = this.getJdbcTemplate().query(sql, params, mapper);
+//			System.out.println("SQL-----------");
+//			return loginAccount;
+//		} catch (EmptyResultDataAccessException e) {
+//			return null;
+//		}
+//    }
+	public List<MemberLogin> findPassword(String newmemberAccount) {
         System.out.println("SQL-----------findPassword");
-        String sql = MemberLoginMapper.BASE_SQL;
+        String sql ="SELECT  account,password FROM memberinfo WHERE account=?";
 
-		Object[] params = new Object[] {newmemberPassword };
+		Object[] params = new Object[] {newmemberAccount };
 		MemberLoginMapper mapper = new MemberLoginMapper();
 		try {
-			List<MemberLogin> bankAccount = this.getJdbcTemplate().query(sql, params, mapper);
-			System.out.println("SQL-----------newmemberPassword");
-			return bankAccount;
+			List<MemberLogin> loginAccount = this.getJdbcTemplate().query(sql, params, mapper);
+			System.out.println("MemberLoginDAO");
+			return loginAccount;
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}

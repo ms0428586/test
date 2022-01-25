@@ -4,13 +4,13 @@ package org.LKMS.SpringBootJDBC.form;
 public class MemberLogin {
 
 	private String newmemberAccount;
-    private String newmemberPassword;
+    public String newmemberPassword;
     
     public MemberLogin(String newmemberAccount, String newmemberPassword) {
         this.newmemberAccount = newmemberAccount;
         this.newmemberPassword=newmemberPassword;
        
-        System.out.println("Form");
+        System.out.println("MemberLogin");
 
         System.out.println(newmemberAccount + " , " + newmemberPassword);
     }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.LKMS.SpringBootJDBC.Exception.memberLoginException;
 import org.LKMS.SpringBootJDBC.dao.MemberDAO;
 import org.LKMS.SpringBootJDBC.dao.MemberLoginDAO;
 import org.LKMS.SpringBootJDBC.dao.MenuDAO;
@@ -11,7 +12,6 @@ import org.LKMS.SpringBootJDBC.dao.SelectMemberDAO;
 import org.LKMS.SpringBootJDBC.dao.UpdatePswDAO;
 import org.LKMS.SpringBootJDBC.dao.updateMemberInfoDAO;
 import org.LKMS.SpringBootJDBC.dao.updatemenuDAO;
-import org.LKMS.SpringBootJDBC.exception.BankTransactionException;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.form.AddMenuForm;
 import org.LKMS.SpringBootJDBC.form.MemberLogin;
@@ -19,6 +19,7 @@ import org.LKMS.SpringBootJDBC.form.SelectMemberInfo;
 import org.LKMS.SpringBootJDBC.form.updateMemberInfo;
 import org.LKMS.SpringBootJDBC.form.updateMenuForm;
 import org.LKMS.SpringBootJDBC.form.updatePsw;
+import org.LKMS.SpringBootJDBC.mapper.MemberLoginMapper;
 import org.LKMS.SpringBootJDBC.model.MenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -219,32 +220,49 @@ public class MyController {
         return "redirect:/member";
     }
 
-	@RequestMapping("/memberCentre_login")
-	public String viewmemberCentre_login() {
+	@RequestMapping(value ="/memberCentre_login", method = RequestMethod.GET)
+	public String viewmemberCentre_login(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin) {
 
 		return "memberCentre_login";
 	}
 
-	@RequestMapping("/memberCentre_login")
-    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin) {
+	@RequestMapping(value ="/memberCentre_login/login", method = RequestMethod.POST)
+    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin)throws memberLoginException {
         
         String NewMemberAccount = MemberLogin.getNewmemberAccount();
         String NewMemberPassword = MemberLogin. getNewmemberPassword();
  
-        System.out.println(NewMemberAccount + "processAddMenu-----------");
+        System.out.println(NewMemberAccount   + ":     controllerLogin-----------");
         //加入DAO的account跟password再去做判斷
-        public void addAmount(Long id, double amount) throws memberLoginException {
 //      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
-        MemberLogin userEntity = memberLoginDAO.findByAccountAndPassword(newmemberAccount, newmemberPassword);
+        List<MemberLogin>  getLogin = memberLoginDAO. findPassword(NewMemberAccount);
+        model.addAttribute("MemberLogin", getLogin);
+        String loginpassword="";
+        for(MemberLogin getpassword : getLogin) {
+               loginpassword = getpassword.getNewmemberPassword();
+        }   
+        System.out.println(loginpassword);
+        
+        String gg= MemberLogin.newmemberPassword;
+        System.out.println(gg);
+        
         String str = "";
-        if (userEntity !=null){
-        str = "member";
+        if(NewMemberAccount!=null) {
+            if (getLogin !=null){
+              if(loginpassword==gg) {
+                  str = "redirect:/member";
+              }else {
+                  str = "redirect:/memberCentre_login";
+              }
+
+            }else {
+                str = "redirect:/memberCentre_login";
+            }
         }else {
-        str = "memberCentre_login";
+            str = "redirect:/memberCentre_login";
         }
         return str;
-        }
-	}
+	    }
 
 	@RequestMapping(value = "/memberCentre_regist")
     public String viewmemberCentre_regist(Model model) {

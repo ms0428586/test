@@ -46,19 +46,19 @@
     <div style="border: solid 5px #6B7A8F;" class="box1">
         <div class="container">
             <h3>隨意吃,登入</h3>
-            <form>
+            <form th:action="@{/memberCentre_login/login}"  th:object="${MemberLogin}" method="POST"> 
                 <div class="mb-3">
                     <label for="useraccount" class="form-label">帳號</label>
-                    <input type="account" class="form-control" id="useraccount" placeholder="輸入帳號">
+                    <input type="text" class="form-control" id="useraccount" placeholder="輸入帳號"  th:field="*{newmemberAccount}" >
                 </div>
                 <div class="mb-3">
                     <label for="userpasswd" class="form-label">密碼</label>
-                    <input type="password" class="form-control" id="userpasswd" placeholder="輸入密碼">
+                    <input type="password" class="form-control" id="userpasswd" placeholder="輸入密碼" th:field="*{newmemberPassword}">
                     <p><a href="../memberCentre_changePasswd.html">忘記密碼</a></p>
                 </div>
 
                 <div class="btn__block">
-                    <button type="submit" class="btn btn-success">登入submit</button>
+                    <button type="submit"  class="btn btn-success">登入submit</button>
 					<a th:href="@{/member}" class="btn btn-primary">登入button</a>		
                     <a th:href="@{/memberCentre_regist}" class="btn btn-primary">註冊</a>
                 </div>
