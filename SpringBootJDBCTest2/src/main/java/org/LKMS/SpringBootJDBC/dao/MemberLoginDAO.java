@@ -1,11 +1,11 @@
 package org.LKMS.SpringBootJDBC.dao;
 
-
-
 import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.LKMS.SpringBootJDBC.Exception.memberLoginException;
+import org.LKMS.SpringBootJDBC.controller.MyController;
 import org.LKMS.SpringBootJDBC.form.MemberLogin;
 import org.LKMS.SpringBootJDBC.mapper.MemberLoginMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +53,48 @@ public class MemberLoginDAO  extends JdbcDaoSupport{
 			return null;
 		}
     }
-}
+	public void login(String newmemberAccount,String newmemberPassword) throws memberLoginException {
+		List<MemberLogin>  getLogin = this. findPassword(newmemberAccount);
+		 System.out.println("getLogin");
+        String loginpassword="";
+        for(MemberLogin getpassword : getLogin) {
+               loginpassword = getpassword.getNewmemberPassword();
+        }   
+        System.out.println(loginpassword);
+        
+        String gg= newmemberPassword;
+        System.out.println(gg);
+        
+//        String str = "";
+//        if(newmemberAccount!=null) {
+//            if (getLogin !=null){
+//              if(gg.equals(loginpassword)) {
+//                  str = "redirect:/member";
+//              }else {
+//                  str = "redirect:/memberCentre_login";
+//              }
+//
+//            }else {
+//                str = "redirect:/memberCentre_login";
+//            }
+//        }else {
+//            str = "redirect:/memberCentre_login";
+//        }
+//        return str;
+        	if (getLogin ==null){
+        		throw new memberLoginException(
+    					"帳號輸入錯誤 ");
+        	}else {
+        		if(gg.equals(loginpassword)) {
+        			
+        		}else {
+        			throw new memberLoginException(
+        					"密碼輸入錯誤 ");
+        		}
+        	}
+        
+        
+	    }
+	}
+
+		

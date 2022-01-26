@@ -227,41 +227,46 @@ public class MyController {
 	}
 
 	@RequestMapping(value ="/memberCentre_login/login", method = RequestMethod.POST)
-    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin)throws memberLoginException {
+    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin) {
         
         String NewMemberAccount = MemberLogin.getNewmemberAccount();
         String NewMemberPassword = MemberLogin. getNewmemberPassword();
  
         System.out.println(NewMemberAccount   + ":     controllerLogin-----------");
-        //加入DAO的account跟password再去做判斷
-//      新增商品    AddMember取得addMemberForm快取裡的資料 並ADD到資料庫
-        List<MemberLogin>  getLogin = memberLoginDAO. findPassword(NewMemberAccount);
-        model.addAttribute("MemberLogin", getLogin);
-        String loginpassword="";
-        for(MemberLogin getpassword : getLogin) {
-               loginpassword = getpassword.getNewmemberPassword();
-        }   
-        System.out.println(loginpassword);
-        
-        String gg= MemberLogin.newmemberPassword;
-        System.out.println(gg);
-        
-        String str = "";
-        if(NewMemberAccount!=null) {
-            if (getLogin !=null){
-              if(loginpassword==gg) {
-                  str = "redirect:/member";
-              }else {
-                  str = "redirect:/memberCentre_login";
-              }
-
-            }else {
-                str = "redirect:/memberCentre_login";
-            }
-        }else {
-            str = "redirect:/memberCentre_login";
+        try {
+			memberLoginDAO.login(NewMemberAccount,NewMemberPassword);
+        } catch (memberLoginException e) {
+            model.addAttribute("errorMessage", "Error: " + e.getMessage());
+            return "redirect:/memberCentre_login";
         }
-        return str;
+        return "redirect:/member";
+//        List<MemberLogin>  getLogin = memberLoginDAO. findPassword(NewMemberAccount);
+////        model.addAttribute("MemberLogin", getLogin);
+//        String loginpassword="";
+//        for(MemberLogin getpassword : getLogin) {
+//               loginpassword = getpassword.getNewmemberPassword();
+//        }   
+//        System.out.println(loginpassword);
+//        
+//        String gg= MemberLogin.newmemberPassword;
+//        System.out.println(gg);
+//        
+//        String str = "";
+//        if(NewMemberAccount!=null) {
+//            if (getLogin !=null){
+//              if(gg.equals(loginpassword)) {
+//                  str = "redirect:/member";
+//              }else {
+//                  str = "redirect:/memberCentre_login";
+//              }
+//
+//            }else {
+//                str = "redirect:/memberCentre_login";
+//            }
+//        }else {
+//            str = "redirect:/memberCentre_login";
+//        }
+//        return str;
 	    }
 
 	@RequestMapping(value = "/memberCentre_regist")
