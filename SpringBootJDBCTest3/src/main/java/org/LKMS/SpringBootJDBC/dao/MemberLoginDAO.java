@@ -65,23 +65,7 @@ public class MemberLoginDAO  extends JdbcDaoSupport{
         String gg= newmemberPassword;
         System.out.println(gg);
         
-//        String str = "";
-//        if(newmemberAccount!=null) {
-//            if (getLogin !=null){
-//              if(gg.equals(loginpassword)) {
-//                  str = "redirect:/member";
-//              }else {
-//                  str = "redirect:/memberCentre_login";
-//              }
-//
-//            }else {
-//                str = "redirect:/memberCentre_login";
-//            }
-//        }else {
-//            str = "redirect:/memberCentre_login";
-//        }
-//        return str;
-        	if (getLogin ==null){
+        	if (getLogin.isEmpty()){
         		throw new memberLoginException(
     					"帳號輸入錯誤 ");
         	}else {

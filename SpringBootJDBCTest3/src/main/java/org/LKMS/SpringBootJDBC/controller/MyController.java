@@ -236,37 +236,10 @@ public class MyController {
         try {
 			memberLoginDAO.login(NewMemberAccount,NewMemberPassword);
         } catch (memberLoginException e) {
-            model.addAttribute("errorMessage", "Error: " + e.getMessage());
+            model.addAttribute("errorMessage", "帳號或密碼輸入錯誤" );
             return "redirect:/memberCentre_login";
         }
         return "redirect:/member";
-//        List<MemberLogin>  getLogin = memberLoginDAO. findPassword(NewMemberAccount);
-////        model.addAttribute("MemberLogin", getLogin);
-//        String loginpassword="";
-//        for(MemberLogin getpassword : getLogin) {
-//               loginpassword = getpassword.getNewmemberPassword();
-//        }   
-//        System.out.println(loginpassword);
-//        
-//        String gg= MemberLogin.newmemberPassword;
-//        System.out.println(gg);
-//        
-//        String str = "";
-//        if(NewMemberAccount!=null) {
-//            if (getLogin !=null){
-//              if(gg.equals(loginpassword)) {
-//                  str = "redirect:/member";
-//              }else {
-//                  str = "redirect:/memberCentre_login";
-//              }
-//
-//            }else {
-//                str = "redirect:/memberCentre_login";
-//            }
-//        }else {
-//            str = "redirect:/memberCentre_login";
-//        }
-//        return str;
 	    }
 
 	@RequestMapping(value = "/memberCentre_regist")
