@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Bank</title>
+	
+</head>
+
+<body>
+	<!-- Include _menu.html -->
+	<th:block th:include="/_menu"></th:block>
+
+	<h2>AddMenu</h2>
+
+	<!-- 
+      <div th:if="${errorMessage!=null}"
+           style="color:red;font-style:italic" th:utext="${errorMessage}">..</div>
+      -->
+
+	<form th:action="@{/test1}" th:object="${addMenuForm}" method="POST">
+		<table>
+			<!-- 
+			<tr>
+				<td>id</td>
+				<td><input type="text" th:field="*{newid}" /></td>
+			</tr>
+			<tr>
+				<td>productCode</td>
+				<td><input type="text" th:field="*{newproductCode}" /></td>
+			</tr>
+			
+			<tr>
+				<td>productName</td>
+				<td><input type="text" th:field="*{newproductName}" /></td>
+			</tr>
+			<tr>
+				<td>productSize</td>
+				<td><input type="text" th:field="*{newproductSize}" /></td>
+			</tr>
+			<tr>
+				<td>productPrice</td>
+				<td><input type="text" th:field="*{newproductPrice}" /></td>
+			</tr>
+			<tr>
+				<td>productCategory</td>
+				<td><input type="text" th:field="*{newproductCategory}" /></td>
+			</tr>
+			<tr>
+				<td>productDescription</td>
+				<td><input type="text" th:field="*{newproductDescription}" /></td>
+			</tr>
+
+			-->
+			
+			<!-- 內容 -->
+			<div class="row">
+				<div class="col">
+					<div class="">
+						<label for="name" class="form-label">ID</label> <input type="text" class="form-control"
+							id="name" placeholder="請輸入ID" th:field="*{newid}">
+					</div>
+					<div class="">
+						<label for="name" class="form-label">Code</label> <input type="text" class="form-control"
+							id="name" placeholder="請輸入Code" th:field="*{newproductCode}">
+					</div>
+					<div class="">
+						<label for="name" class="form-label">餐點名稱</label> <input type="text" class="form-control"
+							id="name" placeholder="請輸入商品名稱" th:field="*{newproductName}">
+					</div>
+					<div class="">
+						<label for="size" class="form-label">單位</label> <input type="text" class="form-control"
+							id="size" placeholder="請輸入商品尺寸" th:field="*{newproductSize}">
+					</div>
+					<div class="">
+						<label for="price" class="form-label">價格</label>
+						<div class="input-group" mb-3>
+							<span class="input-group-text">$NT</span> <input type="number" class="form-control"
+								id="price" placeholder="請輸入商品價格" th:field="*{newproductPrice}">
+						</div>
+					</div>
+					<div class="">
+						<label for="input_product_description" class="form-label">商品說明</label>
+						<textarea rows="3" class="form-control" id="input_product_description" placeholder="請輸入商品說明內容"
+							th:field="*{newproductDescription}"></textarea>
+					</div>
+				</div>
+				<div class="col">
+					<div class="select_category">
+						<label for="select_category" class="control-label">選擇商品類別</label>
+						<select id="select_category" class="form-select" th:field="*{newproductCategory}">
+							<option value="" style="display: none">請選擇商品類別</option>
+							<option value="漢堡" id="qwe">漢堡</option>
+							<option value="炸物">炸物</option>
+							<option value="全家">全家餐</option>
+							<option value="飲料">飲料</option>
+						</select>
+
+					</div>
+
+				</div>
+			</div>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Send" /></td>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Update" /></td>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Delete" /></td>
+				
+					
+			</tr>
+		</table>
+	</form>
+
+
+
+</body>
+
+</html>
