@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
--- 產生時間： 2022-01-27 10:49:25
+-- 產生時間： 2022-01-27 15:09:37
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `zootreekettest01`
+-- 資料庫： `zootreekey01`
 --
 
 -- --------------------------------------------------------
@@ -98,6 +98,18 @@ INSERT INTO `restaurant` (`restaurant_id`, `restaurant_category`, `restaurant_na
 (3, '速食店', '漢堡王Burger King台中公益店', '台中市西區公益路152-5號', '$$', '+886423200922', '10:00-22:00', '台中市', NULL, 'https://www.burgerking.com.tw/branchweb', 'https://goo.gl/maps/7i3enNzZ85FkH14EA'),
 (4, '韓式料理', '咕咕家韓式炸雞Pizza吃到飽 公益店', '臺中市南屯區公益路二段95號1樓', '$$$', '+886423208284', '11:00-22:00', '台中市', NULL, 'https://www.facebook.com/ChickenPlusGongYi/', 'https://goo.gl/maps/Js4Dx2gDM8uRsao87'),
 (5, '火鍋', '和牛涮 日式鍋物放題 台北羅斯福店', '台北市大安區羅斯福路二段27號', '$$$$', '+886223910269', '11:30-23:30', '台北市', NULL, 'https://www.wagyushabu.com.tw/', 'https://goo.gl/maps/CsFfh3sz7g4nBSg68');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `restaurantimglist`
+--
+
+CREATE TABLE `restaurantimglist` (
+  `id` bigint(20) NOT NULL,
+  `restaurant_id` bigint(20) NOT NULL,
+  `restaurant_img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 已傾印資料表的索引
