@@ -28,6 +28,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.standard.expression.Each;
 @EntityScan(basePackages={"org.LKMS.SpringBootJDBC.dao"})
 @Controller
@@ -177,20 +178,7 @@ public class MyController {
 
         return "member";
     }
-//    @RequestMapping(value = "/member/updateMember", method = RequestMethod.GET)
-//    public String showupdateMember(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo) {
-//
-//        return "member";
-//    }
-//    @RequestMapping(value = "/member/updateMember", method = RequestMethod.GET)
-//    public String viewupdateMember(Model model) {
-//
-////      新增商品    AddMenuForm取得頁面表單資料放入快取 也可給預設值 
-//        updateMemberInfo menuform = new updateMemberInfo("004", "純喫茶", "小");
-//        model.addAttribute("updateMemberInfo", menuform);
-//
-//        return "member";
-//    }
+
 //  處理表單送來的資料
     @RequestMapping(value = "/member/updateMember", method = RequestMethod.POST)
     public String processupdateMember(Model model, @ModelAttribute("updateMemberInfo") updateMemberInfo updateMemberInfo) {
@@ -227,7 +215,8 @@ public class MyController {
 	}
 
 	@RequestMapping(value ="/memberCentre_login/login", method = RequestMethod.POST)
-    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin) {
+    public String processAddMember(Model model,@ModelAttribute("MemberLogin") MemberLogin MemberLogin
+    		) {
         
         String NewMemberAccount = MemberLogin.getNewmemberAccount();
         String NewMemberPassword = MemberLogin. getNewmemberPassword();
