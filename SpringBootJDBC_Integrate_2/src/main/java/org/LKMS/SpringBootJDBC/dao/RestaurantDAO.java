@@ -43,7 +43,7 @@ public class RestaurantDAO {
 		
 		String sql = "Select new " + RestaurantInfo.class.getName() 
 				+ "(R.restaurantId,R.restaurantCategory,R.restaurantName,R.restaurantAddress,"
-				+ "R.restaurantPrice,R.restaurantPhone,R.businessHours,R.restaurantWeb,R.restaurantImg,R.restaurantMap) " 
+				+ "R.restaurantPrice,R.restaurantPhone,R.businessHours,R.restaurantWeb,R.restaurantImg,R.restaurantMap,R.restaurantCity) " 
 				+ " from " + Restaurant.class.getName() + " R WHERE id=" +id;
 
 		Query query = entityManager.createQuery(sql, RestaurantInfo.class);

@@ -41,11 +41,13 @@
 							<div class="choose__store__title">
 								<h1 style="text-align: left;">Zootreekey</h1>
 							</div>
+							<form method="post"  action="/RestaurantList">
 							<div class="store__serch" style="text-align: left;">
 								<input type="search" id="site-search"
-									aria-label="Search through site content">
-								<button>找餐廳</button>
+									aria-label="Search through site content" name="searchRestaurant">
+								<input type="submit"  value="找餐廳">
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -134,7 +136,7 @@
 								<div class="photo__list" style="text-align: center;">
 									<div class="photo__title">
 										<h2>
-											<span>XXX 的最新照片</span>
+											<span>美食照片</span>
 										</h2>
 									</div>
 									<div class="photo__item__list">
@@ -172,7 +174,7 @@
 
 									<div class="store__comment__title">
 										<h4>
-											<b><a>XXX的評論區 XX則</a></b>
+											<b><a>美食評論區 </a></b>
 										</h4>
 									</div>
 									<div class="comment__input__block row">
@@ -235,7 +237,7 @@
 							<div class="col-4">
 								<div class="recent__restaurant__list">
 									<h4>
-										<b>附近餐廳推薦</b>
+										<b>餐廳推薦</b>
 									</h4>
 									<dvi class="recent__restaurant__subtitle"> <a href="">(地區)(分類)推薦</a>
 									</dvi>
