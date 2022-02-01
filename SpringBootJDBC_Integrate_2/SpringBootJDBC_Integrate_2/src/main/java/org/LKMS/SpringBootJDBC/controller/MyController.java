@@ -9,11 +9,12 @@ import org.LKMS.SpringBootJDBC.dao.RestaurantDAO;
 import org.LKMS.SpringBootJDBC.form.AddMemberForm;
 import org.LKMS.SpringBootJDBC.model.CommentInfo;
 import org.LKMS.SpringBootJDBC.model.RestaurantInfo;
+import org.LKMS.SpringBootJDBC.model.SearchRestaurantInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,17 +52,12 @@ public class MyController {
 
 		return "RestaurantList";
 	}
+//	@RequestMapping(value = "/RestaurantList/search", method = RequestMethod.POST)
+//    public String searchRestaurant(String restaurantSearch) {
+//	    System.out.println(restaurantSearch);
+//	    return "redirect:/RestaurantList";
+//	}
 	
-	@PostMapping("/RestaurantList")
-	public String SearchRestaurant(Model model,String searchRestaurant) {
-	    System.out.println(searchRestaurant);
-	    
-	    List<RestaurantInfo> SearchList = restaurantDAO.SearchRestaurant(searchRestaurant);
-        model.addAttribute("RestaurantInfos", SearchList);
-        
-	    return"RestaurantList";
-	    
-	}
 	@RequestMapping(value = "/Restaurant", method = RequestMethod.GET)
 	public String showRestaurant(Model model,
 			@RequestParam(value = "Id", defaultValue = "") Long id) {

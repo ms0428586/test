@@ -29,7 +29,7 @@ public class RestaurantDAO {
 
 		String sql = "Select new " + RestaurantInfo.class.getName() 
 				+ "(R.restaurantId,R.restaurantCategory,R.restaurantName,R.restaurantAddress,"
-				+ "R.restaurantPrice,R.restaurantPhone,R.businessHours,R.restaurantWeb,R.restaurantImg,R.restaurantMap,R.restaurantCity) " 
+				+ "R.restaurantPrice,R.restaurantPhone,R.businessHours,R.restaurantWeb,R.restaurantImg,R.restaurantMap,R.restaurantCity,R.restaurantSearch) " 
 				+ " from " + Restaurant.class.getName() + " R WHERE restaurantCity LIKE  '%"+city+"%'";
 		System.out.println("SQL");
 		Query query = entityManager.createQuery(sql, RestaurantInfo.class);
@@ -52,24 +52,5 @@ public class RestaurantDAO {
 		return query.getResultList();
 	}
 	
-	public List<RestaurantInfo> SearchRestaurant(String searchRestaurant) {
-        System.out.println("SearchSQL-1");
-        System.out.println(searchRestaurant);
-
-        String sql = "Select new " + RestaurantInfo.class.getName() 
-                + "(R.restaurantId,R.restaurantCategory,R.restaurantName,R.restaurantAddress,"
-                + "R.restaurantPrice,R.restaurantPhone,R.businessHours,R.restaurantWeb,R.restaurantImg,R.restaurantMap,R.restaurantCity) " 
-                + " from " + Restaurant.class.getName() 
-                + " R WHERE restaurantCategory LIKE '%"+searchRestaurant+"%'"
-                +"OR restaurantName LIKE '%"+searchRestaurant+"%'"
-                +"OR restaurantAddress LIKE '%"+searchRestaurant+"%'"
-                +"OR restaurantCity LIKE '%"+searchRestaurant+"%'";
-        
-        System.out.println("SearchSQL-2");
-        Query query = entityManager.createQuery(sql, RestaurantInfo.class);
-        System.out.println("Search");
-
-        return query.getResultList();
-    }
 
 }
