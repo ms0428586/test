@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
--- 產生時間： 2022-02-06 01:06:36
+-- 產生時間： 2022-02-06 19:57:11
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -42,8 +42,13 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` (`id`, `member_id`, `restaurant_id`, `content`, `create_date`) VALUES
 (1, 1, 1, '好吃', '2022-01-29 14:25:40'),
 (2, 1, 2, '好吃到爆', '2022-01-29 14:26:25'),
-(3, 2, 1, '我是老五', '2022-01-29 14:26:51'),
-(4, 3, 3, '好吃一直吃', '2022-01-29 14:27:07');
+(3, 2, 1, '每天都來吃', '2022-01-29 14:26:51'),
+(4, 3, 3, '好吃一直吃', '2022-01-29 14:27:07'),
+(5, 1, 3, '吃吃吃吃吃吃吃吃', '2022-02-05 17:40:29'),
+(6, 1, 5, '吃吃吃吃吃吃吃吃吃吃', '2022-02-05 17:40:38'),
+(7, 3, 1, '服務好!', '2022-02-06 10:53:34'),
+(8, 4, 1, '超好吃!', '2022-02-06 10:53:55'),
+(9, 5, 1, 'delicious!', '2022-02-06 10:54:40');
 
 -- --------------------------------------------------------
 
@@ -57,19 +62,20 @@ CREATE TABLE `memberinfo` (
   `name` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` int(225) NOT NULL
+  `phone` int(225) NOT NULL,
+  `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `memberinfo`
 --
 
-INSERT INTO `memberinfo` (`id`, `account`, `name`, `password`, `email`, `phone`) VALUES
-(1, 'qazqaz', '美女', 'qazwsx', 'qq70010pp@yahoo.com.tw', 98778778),
-(2, 'zootreekey', '老七', 'qazwsx', 'qq170010pp@yahoo.com.tw', 979178176),
-(3, 'qweasd', '帥哥', 'qweasd', '878@gmail.com', 987878887),
-(4, 'zxczxc', '賭神', 'zxczxc', '123@gmail.com', 979178176),
-(5, 'asdasd', '大帥哥', 'asdasd', '321@gmail.com', 979178176);
+INSERT INTO `memberinfo` (`id`, `account`, `name`, `password`, `email`, `phone`, `photo`) VALUES
+(1, 'zootreekey', '帥哥', 'qweasd', '123456@gmail.com', 979000111, '/img/image_preview.jpg'),
+(2, 'zootreekey01', '老五', 'qweasd', 'qq170010pp@yahoo.com.tw', 979178176, '/img/UserPhoto01.png'),
+(3, 'zootreekey02', '紅心A', 'qweasd', '878@gmail.com', 987878887, '/img/UserPhoto02.png'),
+(4, 'zxczxc', '黑桃7', 'qweasd', '123@gmail.com', 979178176, '/img/UserPhoto03.png'),
+(5, 'asdasd', '紅心5', 'asdasd', '321@gmail.com', 979178176, '/img/UserPhoto04.png');
 
 -- --------------------------------------------------------
 
@@ -175,7 +181,7 @@ ALTER TABLE `restaurantphotolist`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `memberinfo`
