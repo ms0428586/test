@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: tw.org.iii.cma.LabbootJspApplicationTests
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in tw.org.iii.cma.LabbootJspApplicationTests
