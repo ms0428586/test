@@ -1,0 +1,26 @@
+  @charset "UTF-8";
+  
+.menu__informantion__item {
+    border: solid 1px #dcc7aa;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu__content {
+    border-top: solid 1px #dcc7aa;
+    border-bottom: solid 1px #dcc7aa;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.revise__product__btn {
+    color: #6b7a8f;
+    background-color: #dcc7aa;
+}
+
+.food__img {
+    height: 160px;
+}
