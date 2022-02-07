@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
+<<<<<<< HEAD
 -- 產生時間： 2022-02-06 19:57:11
+=======
+-- 產生時間： 2022-02-07 16:16:26
+>>>>>>> 7e1d3acc344ac353d872933a39a2b4cb76614ecb
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -42,6 +46,7 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` (`id`, `member_id`, `restaurant_id`, `content`, `create_date`) VALUES
 (1, 1, 1, '好吃', '2022-01-29 14:25:40'),
 (2, 1, 2, '好吃到爆', '2022-01-29 14:26:25'),
+<<<<<<< HEAD
 (3, 2, 1, '每天都來吃', '2022-01-29 14:26:51'),
 (4, 3, 3, '好吃一直吃', '2022-01-29 14:27:07'),
 (5, 1, 3, '吃吃吃吃吃吃吃吃', '2022-02-05 17:40:29'),
@@ -49,6 +54,11 @@ INSERT INTO `comment` (`id`, `member_id`, `restaurant_id`, `content`, `create_da
 (7, 3, 1, '服務好!', '2022-02-06 10:53:34'),
 (8, 4, 1, '超好吃!', '2022-02-06 10:53:55'),
 (9, 5, 1, 'delicious!', '2022-02-06 10:54:40');
+=======
+(3, 2, 1, '我是老五', '2022-01-29 14:26:51'),
+(4, 3, 3, '好吃一直吃', '2022-01-29 14:27:07'),
+(5, 3, 1, '服務超好', '2022-02-07 02:10:48');
+>>>>>>> 7e1d3acc344ac353d872933a39a2b4cb76614ecb
 
 -- --------------------------------------------------------
 
@@ -63,7 +73,11 @@ CREATE TABLE `memberinfo` (
   `password` varchar(225) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` int(225) NOT NULL,
+<<<<<<< HEAD
   `photo` varchar(255) NOT NULL
+=======
+  `photo` varchar(255) DEFAULT NULL
+>>>>>>> 7e1d3acc344ac353d872933a39a2b4cb76614ecb
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -71,11 +85,19 @@ CREATE TABLE `memberinfo` (
 --
 
 INSERT INTO `memberinfo` (`id`, `account`, `name`, `password`, `email`, `phone`, `photo`) VALUES
+<<<<<<< HEAD
 (1, 'zootreekey', '帥哥', 'qweasd', '123456@gmail.com', 979000111, '/img/image_preview.jpg'),
 (2, 'zootreekey01', '老五', 'qweasd', 'qq170010pp@yahoo.com.tw', 979178176, '/img/UserPhoto01.png'),
 (3, 'zootreekey02', '紅心A', 'qweasd', '878@gmail.com', 987878887, '/img/UserPhoto02.png'),
 (4, 'zxczxc', '黑桃7', 'qweasd', '123@gmail.com', 979178176, '/img/UserPhoto03.png'),
 (5, 'asdasd', '紅心5', 'asdasd', '321@gmail.com', 979178176, '/img/UserPhoto04.png');
+=======
+(1, 'zootreekey', '帥哥', 'qweasd', '123456@yahoo.com.tw', 98778778, '/img/image_preview.jpg'),
+(2, 'zootreekey1', '老七', 'qweasd', 'qq170010pp@yahoo.com.tw', 979178176, '/img/UserPhoto01.png'),
+(3, 'zootreekey2', '紅心A', 'qweasd', '878@gmail.com', 987000000, '/img/UserPhoto02.png'),
+(4, 'zootreekey3', '黑桃7', 'qweasd', '123@gmail.com', 979178176, '/img/UserPhoto03.png'),
+(5, 'zootreekey4', '紅心5', 'asdasd', '321@gmail.com', 979178176, '/img/UserPhoto04.png');
+>>>>>>> 7e1d3acc344ac353d872933a39a2b4cb76614ecb
 
 -- --------------------------------------------------------
 
@@ -103,7 +125,7 @@ CREATE TABLE `restaurant` (
 
 INSERT INTO `restaurant` (`restaurant_id`, `restaurant_category`, `restaurant_name`, `restaurant_address`, `restaurant_price`, `restaurant_phone`, `business_hours`, `restaurant_city`, `restaurant_img`, `restaurant_web`, `restaurant_map`) VALUES
 (1, '速食店', '麥當勞-台中公益二店', '台中市南屯區公益路二段128號', '$$', '+886423285051', '00:00-24:00', '台中市', '/img/RestaurantLogoImg/McDonald.jpg', 'https://www.mcdonalds.com/tw/zh-tw.html', 'https://goo.gl/maps/dv9kGjYfHagRuWie9'),
-(2, '速食店', '肯德基KFC-台中公益餐廳', '台中市西區公益路163號', '$$', '+886423027066', '11:00-23:00', '', '/img/RestaurantLogoImg/KFC.png', 'https://www.facebook.com/kfctaiwan/', 'https://goo.gl/maps/B7uP7PJ7sqLAUs8K9'),
+(2, '速食店', '肯德基KFC-台中公益餐廳', '台中市西區公益路163號', '$$', '+886423027066', '11:00-23:00', '', '/img/RestaurantLogoImg/KFC.jpg', 'https://www.facebook.com/kfctaiwan/', 'https://goo.gl/maps/B7uP7PJ7sqLAUs8K9'),
 (3, '速食店', '漢堡王Burger King台中公益店', '台中市西區公益路152-5號', '$$', '+886423200922', '10:00-22:00', '台中市', '/img/RestaurantLogoImg/BurgerKing.jpg', 'https://www.burgerking.com.tw/branchweb', 'https://goo.gl/maps/7i3enNzZ85FkH14EA'),
 (6, '港式', '廚窗港點 士林官邸店', '臺北市士林區福林路190跟188號', '均消$660', '0228806565', '11:30-14:30\r\n17:30-21:00', '台北市', '/img/RestaurantLogoImg/台北-廚窗港點.jpg', 'https://reurl.cc/44dDyj', 'https://reurl.cc/OpraX3'),
 (7, '台式', '款待 手路菜', '臺北市中山區中山北路一段53巷32號', '均消$1100', '0225676097', '11:30-14:00\r\n17:30-21:30', '台北市', '/img/RestaurantLogoImg/台北-款待台菜.jpeg', 'https://reurl.cc/7edAry', 'https://reurl.cc/2DjArE'),
@@ -133,17 +155,71 @@ CREATE TABLE `restaurantphotolist` (
 --
 
 INSERT INTO `restaurantphotolist` (`id`, `Restaurant_Id`, `Restaurant_Photo`) VALUES
-(3, '11', '/img/Taichung/台中-咚豬咚豬/271243250_255529140023979_9106061032416141015_n.jpeg'),
-(4, '11', '/img/Taichung/台中-咚豬咚豬/271556278_255528946690665_28174361469228778_n.jpeg'),
-(5, '11', '/img/Taichung/台中-咚豬咚豬/271593030_255529366690623_3035157339762853859_n.jpeg'),
-(6, '11', '/img/Taichung/台中-咚豬咚豬/271596050_255528873357339_2362975046235639858_n.jpeg'),
-(7, '11', '/img/Taichung/台中-咚豬咚豬/271724379_255529423357284_5202644642743413062_n.jpeg'),
-(8, '11', '/img/Taichung/台中-咚豬咚豬/271729794_255529190023974_7872967343448511328_n.jpeg'),
-(9, '11', '/img/Taichung/台中-咚豬咚豬/51689737022_808d230e10_c.jpeg'),
-(10, '11', '/img/Taichung/台中-咚豬咚豬/51690531361_eba4906602_c.jpeg'),
-(11, '11', '/img/Taichung/台中-咚豬咚豬/51690797648_19b18199d7_c.jpeg'),
-(12, '11', '/img/Taichung/台中-咚豬咚豬/51691209289_c31597af3c_c.jpeg'),
-(13, '11', '/img/Taichung/台中-咚豬咚豬/51691421200_354b453998_c.jpeg');
+(1, '6', '/img/Taipei/台北-廚窗港點（士林店）/1639295241-2346169841-g_l.jpeg'),
+(2, '6', '/img/Taipei/台北-廚窗港點（士林店）/1639295241-1892713309-g_l.jpeg'),
+(3, '6', '/img/Taipei/台北-廚窗港點（士林店）/1639295243-1012543879-g_l.jpeg'),
+(4, '6', '/img/Taipei/台北-廚窗港點（士林店）/1639295243-1685554311-g_l.jpeg'),
+(5, '6', '/img/Taipei/台北-廚窗港點（士林店）/1639295246-3220204072-g_l.jpeg'),
+(6, '7', '/img/Taipei/台北-款待台菜/DSC04985.jpeg'),
+(7, '7', '/img/Taipei/台北-款待台菜/DSC04996.jpeg'),
+(8, '7', '/img/Taipei/台北-款待台菜/DSC05000.jpeg'),
+(9, '7', '/img/Taipei/台北-款待台菜/DSC05006.jpeg'),
+(10, '7', '/img/Taipei/台北-款待台菜/DSC05020.jpeg'),
+(11, '8', '/img/Taipei/台北-金洹苑/20211121024734_37.jpeg'),
+(12, '8', '/img/Taipei/台北-金洹苑/20211121024809_73.jpeg'),
+(13, '8', '/img/Taipei/台北-金洹苑/20211121024753_1.jpeg'),
+(14, '8', '/img/Taipei/台北-金洹苑/20211121024750_42.jpeg'),
+(15, '8', '/img/Taipei/台北-金洹苑/20211121024802_43.jpeg'),
+(16, '9', '/img/Taipei/台北-和泰興/cake01-005.png'),
+(17, '9', '/img/Taipei/台北-和泰興/cake01-001.png'),
+(18, '9', '/img/Taipei/台北-和泰興/cake06-001.png'),
+(19, '9', '/img/Taipei/台北-和泰興/cake06-002.png'),
+(20, '9', '/img/Taipei/台北-和泰興/cake06-009.png'),
+(21, '10', '/img/Taipei/台北-水上米/272200435_260804126192184_301645705629277142_n.jpeg'),
+(22, '10', '/img/Taipei/台北-水上米/272385905_260804046192192_4877648097885912300_n.jpeg'),
+(23, '10', '/img/Taipei/台北-水上米/272319954_260803949525535_4112935531772570758_n.jpeg'),
+(24, '10', '/img/Taipei/台北-水上米/272156864_260803889525541_1367743178556668222_n.jpeg'),
+(25, '10', '/img/Taipei/台北-水上米/270238935_246384910967439_4045283753812862280_n.jpeg'),
+(26, '11', '/img/Taichung/台中-咚豬咚豬/271596050_255528873357339_2362975046235639858_n.jpeg'),
+(27, '11', '/img/Taichung/台中-咚豬咚豬/271729794_255529190023974_7872967343448511328_n.jpeg'),
+(28, '11', '/img/Taichung/台中-咚豬咚豬/271243250_255529140023979_9106061032416141015_n.jpeg'),
+(29, '11', '/img/Taichung/台中-咚豬咚豬/51691421200_354b453998_c.jpeg'),
+(30, '11', '/img/Taichung/台中-咚豬咚豬/51691209289_c31597af3c_c.jpeg'),
+(31, '12', '/img/Taichung/台中-宮秸火鍋/20211215234817_94.jpeg'),
+(32, '12', '/img/Taichung/台中-宮秸火鍋/20211215234918_83.jpeg'),
+(33, '12', '/img/Taichung/台中-宮秸火鍋/20211215234936_43.jpeg'),
+(34, '12', '/img/Taichung/台中-宮秸火鍋/20211215234938_43.jpeg'),
+(35, '12', '/img/Taichung/台中-宮秸火鍋/20211215234940_40.jpeg'),
+(36, '13', '/img/Taichung/台中-眺高/23167983_838122563036949_6336674800533496498_n.jpeg'),
+(37, '13', '/img/Taichung/台中-眺高/23755517_846441745538364_6822004130291653497_n.jpeg'),
+(38, '13', '/img/Taichung/台中-眺高/24231730_851380505044488_6586871055913729015_n.jpeg'),
+(39, '13', '/img/Taichung/台中-眺高/55557081_1166619596853909_2280404785502879744_n.jpeg'),
+(40, '13', '/img/Taichung/台中-眺高/32235722_938543466328191_3924770909272932352_n.jpeg'),
+(41, '14', '/img/Taichung/台中-千田屋/1639371764-e984b5287e0eabd6ef36730fa6c4d04e.jpeg'),
+(42, '14', '/img/Taichung/台中-千田屋/1639371769-b263d2fc683740541619288ebbc25639.jpeg'),
+(43, '14', '/img/Taichung/台中-千田屋/1639371784-5aeb41a27431197b1601e91749ac6a83.jpeg'),
+(44, '14', '/img/Taichung/台中-千田屋/1639371776-a628b59e9440732fb7787dedf335d753.jpeg'),
+(45, '14', '/img/Taichung/台中-千田屋/1639371790-fa9bb0cb0069835e9aaa0da1e573c9e9.jpeg'),
+(46, '10', '/img/Taichung/台中-叁食初/250541149_123851866712070_7875991973530842630_n.jpeg'),
+(47, '10', '/img/Taichung/台中-叁食初/250727887_123851876712069_4664442493458790499_n.jpeg'),
+(48, '10', '/img/Taichung/台中-叁食初/252577064_123851886712068_3911946708837800050_n.jpeg'),
+(49, '10', '/img/Taichung/台中-叁食初/257224144_127027929727797_2671518670809236265_n.jpeg'),
+(50, '10', '/img/Taichung/台中-叁食初/258373522_127227706374486_8347995549835406693_n.jpeg'),
+(51, '1', '/img/麥當勞/191023_Mcdonalds_00_1024.jpeg'),
+(52, '1', '/img/麥當勞/MS190506_EVM_M-12.png'),
+(53, '1', '/img/麥當勞/201411271547430_l.jpeg'),
+(54, '1', '/img/麥當勞/9387384_orig.png'),
+(55, '1', '/img/麥當勞/1972769_orig.png'),
+(56, '8', '/img/肯德基/金海派富貴起司雞XL餐$19520220120-pc.jpeg'),
+(57, '2', '/img/肯德基/吮指雙雞XL套餐-20220119-pc.jpeg'),
+(58, '2', '/img/肯德基/咔啦雞腿堡XL套餐-20220119-pc.jpeg'),
+(59, '2', '/img/肯德基/台酒花雕紙包雞 XL餐185-20220119-pc.jpeg'),
+(60, '2', '/img/肯德基/紐奧良烤雞腿堡XL套餐-210726-pc.jpeg'),
+(61, '3', '/img/漢堡王/bf1a73d7-2791-4f94-920d-7f0bcbd7919f.png'),
+(62, '3', '/img/漢堡王/7b7d4a79-67e7-4b73-a8b9-54b0f65844c2.png'),
+(63, '3', '/img/漢堡王/b6826844-827a-4986-aa35-8436fec0c8f3.png'),
+(64, '3', '/img/漢堡王/fdf6e539-4246-49c6-bdf0-a2f543c8bb27.png'),
+(65, '3', '/img/漢堡王/b6edd4ae-070b-4cdb-9a8b-045068293a4c.png');
 
 --
 -- 已傾印資料表的索引
@@ -181,7 +257,11 @@ ALTER TABLE `restaurantphotolist`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `comment`
 --
 ALTER TABLE `comment`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+=======
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> 7e1d3acc344ac353d872933a39a2b4cb76614ecb
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `memberinfo`
@@ -199,7 +279,7 @@ ALTER TABLE `restaurant`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `restaurantphotolist`
 --
 ALTER TABLE `restaurantphotolist`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

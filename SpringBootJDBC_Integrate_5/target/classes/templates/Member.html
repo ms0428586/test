@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="shortcut icon" href="../img/logo_2.png" />
+<title>隨便吃幫你決定這一餐</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- bootstrap_css link-->
+<link rel="stylesheet" href="/css/bootstrap01.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/mytask.css" type="text/css">
+<link rel=stylesheet type="text/css" href="css/main.css">
+<link rel="stylesheet" href="css/choosestore.css" type="text/css">
+<link rel="stylesheet" href="css/Restaurant.css" type="text/css">
+<script src="js/drawcard_random.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"></script>
+<script script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+	crossorigin="anonymous"></script>
+
+<style>
+.containerPurchase {
+	width: 800px;
+	height: 150px;
+	padding: 25px;
+	margin: auto;
+	color: #0a0a0a;
+	background-color: antiquewhite;
+}
+
+img[alt$="logo"] {
+	width: 80px;
+	height: 80px;
+}
+/* call_center  */
+.box1 {
+	width: 400px;
+	padding: 25px;
+	margin: 100px auto;
+	color: #0a0a0a;
+	background-color: antiquewhite;
+}
+
+.basic_information_warpper {
+	border: solid 1px #dcc7aa;
+	height: 450px;
+	width: 600px;
+	padding: 15px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	background-color: #ffffff;
+}
+
+.basic_information_item {
+	height: 105px;
+}
+
+.customer__comment__item {
+	margin-top: 30px;
+}
+
+.member__comment__content {
+	margin-left: 16px;
+}
+
+.member__comment__block {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-align-items: flex-start;
+	-webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.member_pohto {
+	border: 1px solid #eee;
+	border-radius: 50%;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-position: 50%;
+	background-size: cover;
+	background-color: #eee;
+	cursor: pointer;
+	object-fit: cover;
+}
+
+.restaurantinfo {
+	padding-left: 98px;
+}
+
+.restaurantinfo_pohto {
+	height: 80px;
+}
+
+.my_comment {
+	padding-left: 39px;
+}
+
+.member_container {
+	margin-bottom: 45px;
+}
+</style>
+<th:block th:include="/header"></th:block>
+</head>
+
+<body>
+
+	<div style="background-color: #f7f7f7;">
+		<div class="container">
+			<div class="mytask__nav__block">
+				<ul class="nav nav-tabs justify-content-center">
+					<li class="mytask__instruction__nav nav-item"><a
+						class="nav-link mytask__nav__text active" data-bs-toggle="tab"
+						href="#nenber_centre">會員資料</a></li>
+					<li class="mytask__drawcard__nav nav-item"><a
+						class="nav-link mytask__nav__text" data-bs-toggle="tab"
+						href="#mytask_drawcard_random">隨機吃</a></li>
+					<li class="mytask__drawcard__nav nav-item"><a
+						class="nav-link mytask__nav__text" data-bs-toggle="tab"
+						href="#my_comment">我的評論</a></li>
+				</ul>
+			</div>
+			<div class="member_warpper member_container">
+				<div class="tab-content">
+					<div class="tab-pane fade show active nenber_centre_warpper "
+						id="nenber_centre">
+						<div class="member_title text-center">
+							<h1>
+								<strong><span class="basic_information_01">基本資料</span></strong>
+							</h1>
+						</div>
+						<div class="container">
+
+							<div class="basic_information_warpper mx-auto">
+								<div class="basic_information_item row ">
+									<div class="col-4 align-self-center  text-center ">
+										<h2>姓名 :</h2>
+									</div>
+									<div class="col-8 align-self-center">
+										<h4>
+											<span class="name" th:utext="${MemberInfos.name}">..</span>
+										</h4>
+									</div>
+								</div>
+								<div class="basic_information_item row ">
+									<div class="col-4 align-self-center text-center ">
+										<h2>信箱 :</h2>
+									</div>
+									<div class="col-8 align-self-center text-truncate ">
+										<h4>
+											<span class="email" th:utext="${MemberInfos.email}">..</span>
+										</h4>
+									</div>
+								</div>
+
+								<div class="basic_information_item row ">
+									<div class="col-4 align-self-center text-center ">
+										<h2>電話 :</h2>
+									</div>
+									<div class="col-8 align-self-center">
+										<h4>
+											<span class="cellphone" th:utext="${MemberInfos.phone}">..</span>
+										</h4>
+									</div>
+								</div>
+
+								<div class="basic_information_item row justify-content-center ">
+									<div class="btnt col-6 align-self-end text-center"
+										type="button" data-bs-toggle="modal"
+										data-bs-target="#editinformation">
+										<a class="bntn">修改</a>
+									</div>
+
+									<div class="btnt col-6 align-self-end text-center"
+										type="button" data-bs-toggle="modal"
+										data-bs-target="#editpassword">
+										<a class="bntn">更改密碼</a>
+									</div>
+								</div>
+								<!-- MODAL1 -->
+								<div class="modal fade" id="editinformation">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h3>會員資料修改</h3>
+												<button type="button" class="btn-close"
+													data-bs-dismiss="modal"></button>
+											</div>
+											<div class="modal-body">
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">姓名</span>
+													<input type="text" class="form-control" placeholder="姓名"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">信箱</span>
+													<input type="text" class="form-control" placeholder="__@"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">電話</span>
+													<input type="text" class="form-control" placeholder="手機號碼"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class=" modal-footer">
+													<button type="button" class="btn-good ">儲存</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- MODAL2 -->
+								<div class="container modal fade" id="editpassword">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h3>更改密碼</h3>
+												<button type="button" class="btn-close"
+													data-bs-dismiss="modal"></button>
+											</div>
+											<div class="modal-body">
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">輸入舊密碼</span>
+													<input type="text" class="form-control" placeholder="舊密碼"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">設定新密碼</span>
+													<input type="text" class="form-control" placeholder="新密碼"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class="input-group mb-3">
+													<span class="input-group-text" id="basic-addon1">再次確認新密碼</span>
+													<input type="text" class="form-control" placeholder="確認新密碼"
+														aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<div class=" modal-footer">
+													<button type="button" class="btn-good ">儲存</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="member_container tab-pane drawcard__item "
+						id="mytask_drawcard_random">
+						<div class="mytask__item__title">
+							<h1 class="mytask__item__title__text ">隨機吃</h1>
+						</div>
+						<div class="drawcard_random">
+							<div class="container text-center">
+								<div class=" text-center">
+									<figure class="figure">
+										<span id="random_img"> <img src="img/logo_2.png"
+											style="width: 300px; height: 300px;" class="img-fluid">
+										</span>
+									</figure>
+								</div>
+								<br> <br>
+								<div class="d-grid gap-1 col-2 mx-auto">
+									<button type="button" class=" btn-good"
+										onclick="random_start()">
+										<h6 class="gg h3">吃起來</h6>
+									</button>
+									<button type="button" class=" btn-good" onclick="random_ok()">
+										<h6 class="gg h3">就吃這個</h6>
+									</button>
+								</div>
+							</div>
+						</div>
+						<br> <br> <br>
+
+						<div class="card-body">
+							<div class="card-body-title">
+								<h5 class="dog card-title text-center">隨機吃說明</h5>
+								<hr>
+							</div>
+							<p class="card-text text-center">
+								不知道要吃什麼時，隨機吃隨機幫您決定一餐，省下您的思考時間!</p>
+						</div>
+					</div>
+					<div class="member_container tab-pane shoppingcar_warpper "
+						id="my_comment">
+						<div class="custemer__comment__block">
+							<div class="customer__comment__items">
+								<div class="mycomment_title ">
+									<div class="member_info">
+										<div class="member_name" style="text-align: center;">
+											<h1>
+												<span>美女</span><span>的美食紀錄</span>
+											</h1>
+										</div>
+									</div>
+								</div>
+								<div class="member__comment__block row"
+									th:each="CommentRecordInfo : ${CommentRecordInfos}">
+									<div class="customer__img col-1">
+										<img th:src="${CommentRecordInfo.MemberImg}" class="member_pohto">
+									</div>
+
+									<div class="my_comment col-11">
+										<div class="comment__titel">
+											<div class="comment__name">
+												<span><h5 th:utext="${CommentRecordInfo.MemberName}">王陽明</h5></span>
+											</div>
+											<div class="update__time">
+												<span><H6 th:utext="${CommentRecordInfo.CreateDate}">20220205</H6></span>
+											</div>
+										</div>
+										<div class="comment__textarea">
+											<label th:utext="${CommentRecordInfo.Content}">
+												好吃好吃好吃好吃好吃好吃好吃好吃 </label>
+										</div>
+										<br> <br>
+
+									</div>
+
+									<div class="restaurantinfo row">
+										<div class="restaurantinfo_pohto_block col-2"
+											style="text-align: center;">
+											<img class="restaurantinfo_pohto img-fluid "
+												th:src="${CommentRecordInfo.restaurantImg}">
+										</div>
+										<div class="restaurantinfo_block col-10">
+											<div class="restaurantinfo_name">
+												<h4>
+													<span th:utext="${CommentRecordInfo.RestaurantName}">麥當勞</span>
+												</h4>
+
+											</div>
+											<div class="row">
+												<div class="col-3">
+													<div class="store__score ">
+														<h6>
+															<a>評分5/5</a>
+														</h6>
+													</div>
+													<div class="restaurant_category">
+														<h6>
+															<a th:utext="${CommentRecordInfo.RestaurantCategory}">速食店</a>
+														</h6>
+													</div>
+													<div>
+														<a th:href="@{/Member(RId=${CommentRecordInfo.RestaurantId},MId=${MemberInfos.memberId})}">刪除評論</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>
