@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:3306
--- 產生時間： 2022-02-07 21:33:08
+-- 產生時間： 2022-02-08 15:19:38
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 7.4.16
 
@@ -40,15 +40,13 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `member_id`, `restaurant_id`, `content`, `create_date`) VALUES
-(1, 1, 1, '好吃', '2022-01-29 06:25:40'),
-(2, 1, 2, '好吃到爆', '2022-01-29 06:26:25'),
-(3, 2, 1, '每天都來吃', '2022-01-29 06:26:51'),
-(4, 3, 3, '好吃一直吃', '2022-01-29 06:27:07'),
-(5, 1, 3, '吃吃吃吃吃吃吃吃', '2022-02-05 09:40:29'),
-(6, 1, 5, '吃吃吃吃吃吃吃吃吃吃', '2022-02-05 09:40:38'),
-(7, 3, 1, '服務好!', '2022-02-06 02:53:34'),
-(8, 4, 1, '超好吃!', '2022-02-06 02:53:55'),
-(9, 5, 1, 'delicious!', '2022-02-06 02:54:40');
+(2, 1, 2, '好吃到爆', '2022-01-29 14:26:25'),
+(3, 2, 1, '我是老五', '2022-01-29 14:26:51'),
+(4, 3, 3, '好吃一直吃', '2022-01-29 14:27:07'),
+(5, 3, 1, '服務超好', '2022-02-07 02:10:48'),
+(6, 1, 1, '好吃', '2022-02-08 03:22:12'),
+(7, 2, 2, '還是肯德基的蛋塔最好吃!', '2022-02-08 07:01:01'),
+(8, 3, 2, '肯德基比麥當勞好吃!', '2022-02-08 07:01:32');
 
 -- --------------------------------------------------------
 
@@ -63,7 +61,7 @@ CREATE TABLE `memberinfo` (
   `password` varchar(225) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` int(225) NOT NULL,
-  `photo` varchar(255) NOT NULL
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -102,9 +100,9 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`restaurant_id`, `restaurant_category`, `restaurant_name`, `restaurant_address`, `restaurant_price`, `restaurant_phone`, `business_hours`, `restaurant_city`, `restaurant_img`, `restaurant_web`, `restaurant_map`) VALUES
-(1, '速食店', '麥當勞-台中公益二店', '台中市南屯區公益路二段128號', '$$', '+886423285051', '00:00-24:00', '台中市', '/img/RestaurantLogoImg/McDonald.jpg', 'https://www.mcdonalds.com/tw/zh-tw.html', 'https://goo.gl/maps/dv9kGjYfHagRuWie9'),
-(2, '速食店', '肯德基KFC-台中公益餐廳', '台中市西區公益路163號', '$$', '+886423027066', '11:00-23:00', '', '/img/RestaurantLogoImg/KFC.jpg', 'https://www.facebook.com/kfctaiwan/', 'https://goo.gl/maps/B7uP7PJ7sqLAUs8K9'),
-(3, '速食店', '漢堡王Burger King台中公益店', '台中市西區公益路152-5號', '$$', '+886423200922', '10:00-22:00', '台中市', '/img/RestaurantLogoImg/BurgerKing.jpg', 'https://www.burgerking.com.tw/branchweb', 'https://goo.gl/maps/7i3enNzZ85FkH14EA'),
+(1, '速食店', '麥當勞-台中公益二店', '台中市南屯區公益路二段128號', '均消$100', '+886423285051', '00:00-24:00', '台中市', '/img/RestaurantLogoImg/McDonald.jpg', 'https://www.mcdonalds.com/tw/zh-tw.html', 'https://goo.gl/maps/dv9kGjYfHagRuWie9'),
+(2, '速食店', '肯德基KFC-台中公益餐廳', '台中市西區公益路163號', '均消$100', '+886423027066', '11:00-23:00', '台中市', '/img/RestaurantLogoImg/KFC.jpg', 'https://www.facebook.com/kfctaiwan/', 'https://goo.gl/maps/B7uP7PJ7sqLAUs8K9'),
+(3, '速食店', '漢堡王Burger King台中公益店', '台中市西區公益路152-5號', '均消$100', '+886423200922', '10:00-22:00', '台中市', '/img/RestaurantLogoImg/BurgerKing.jpg', 'https://www.burgerking.com.tw/branchweb', 'https://goo.gl/maps/7i3enNzZ85FkH14EA'),
 (6, '港式', '廚窗港點 士林官邸店', '臺北市士林區福林路190跟188號', '均消$660', '0228806565', '11:30-14:30\r\n17:30-21:00', '台北市', '/img/RestaurantLogoImg/台北-廚窗港點.jpg', 'https://reurl.cc/44dDyj', 'https://reurl.cc/OpraX3'),
 (7, '台式', '款待 手路菜', '臺北市中山區中山北路一段53巷32號', '均消$1100', '0225676097', '11:30-14:00\r\n17:30-21:30', '台北市', '/img/RestaurantLogoImg/台北-款待台菜.jpeg', 'https://reurl.cc/7edAry', 'https://reurl.cc/2DjArE'),
 (8, '日式\r\n燒肉\r\n火鍋', '金洹苑 KIN KAN EN', '臺北市大安區延吉街131巷31號', '均消$1100', '0287720109', '11:30-14:30\r\n17:30-22:00', '台北市', '/img/RestaurantLogoImg/台北-金洹苑.jpeg', 'https://reurl.cc/jky48m', 'https://reurl.cc/3j4Aa9'),
@@ -235,7 +233,7 @@ ALTER TABLE `restaurantphotolist`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `memberinfo`
