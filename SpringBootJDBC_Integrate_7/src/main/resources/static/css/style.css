@@ -1,0 +1,89 @@
+  @charset "UTF-8";
+  
+   .navbar-custom {
+       background-color: #dcc7aa;
+   }
+   
+   .navbar-custom .navbar-brand,
+   .navbar-custom .navbar-text {
+       color: #f7f7f7;
+   }
+   
+   .navbar-custom .navbar-nav .nav-link {
+       color: #6b7a8f;
+       font-weight: 900;
+   }
+   
+   .navbar-custom .navbar-toggler-icon {
+       color: #fffefe;
+   }
+   
+   body {
+       padding-top: 70px;
+   }
+   
+   .bannerImage {
+       padding-top: 75px;
+       padding-bottom: 50px;
+       margin-bottom: 20px;
+       text-align: center;
+       color: #f8f8f8;
+       background: url(/img/intro1.jpg);
+ 
+       background-size: cover;
+   }
+   
+   .bannerContent {
+       position: relative;
+       padding-top: 6%;
+       padding-bottom: 6%;
+       margin-top: 12%;
+       margin-bottom: 12%;
+       background-color: rgba(0, 0, 0, 0.7);
+       max-width: 660px;
+   }
+   
+   html {
+       min-height: 100%;
+       position: relative;
+       background-color: #f7f7f7;
+   }
+   
+   .footer {
+       position: absolute;
+       bottom: 0;
+       right: 0;
+       left: 0;
+       height: 45px;
+       background-color: #dcc7aa;
+   }
+   
+   @media (min-width:320px) {
+       #autoResize {
+           font-size: 12px;
+       }
+   }
+   
+   @media (min-width:481px) {
+       #autoResize {
+           font-size: 16px;
+       }
+   }
+   
+   @media (min-width:641px) {
+       #autoResize {
+           font-size: 18px;
+       }
+   }
+   
+   @media (min-width:961px) {
+       #autoResize {
+           font-size: 20px;
+       }
+   }
+   
+   @media (min-width:1000px) {
+       #autoResize {
+           font-size: 26px;
+       }
+   }

@@ -1,0 +1,308 @@
+	<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="shortcut icon" href="../img/logo_2.png" />
+<title>隨便吃幫你決定這一餐</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- bootstrap_css link-->
+<link rel="stylesheet" href="/css/bootstrap01.min.css" type="text/css">
+
+<!-- bootstrap_js link -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"></script>
+<script script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+	crossorigin="anonymous"></script>
+<!-- my_css link  -->
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/Restaurant.css" type="text/css">
+
+<style>
+.member_pohto {
+	border: 1px solid #eee;
+	border-radius: 50%;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-position: 50%;
+	background-size: cover;
+	background-color: #eee;
+	cursor: pointer;
+	object-fit: cover;
+}
+</style>
+
+</head>
+
+
+
+<body>
+	<th:block th:include="/header"></th:block>
+
+	<div style="background-color: #f7f7f7;">
+
+		<div class="container my_container">
+			<div class="choose__store__information row ">
+				<div class="choose__store__title__blocks ">
+					<div class="choose__store__title__block ">
+						<div class="choose__store__title-serch  col">
+							<div class="choose__store__title">
+								<h1 style="text-align: left; color: #F7882F;">Zootreekey</h1>
+							</div>
+							<div class="store__serch" style="text-align: left;">
+								<input type="search" id="site-search"
+									aria-label="Search through site content">
+								<button>找餐廳</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="store__info__block"
+					th:each="RestaurantInfo : ${getRestaurantInfos}">
+					<div class="store__info__title row">
+						<div class="store__img col-2" style="text-align: center;">
+							<img th:src="${RestaurantInfo.restaurantImg}" class="img-fluid ">
+						</div>
+						<div class="title__info col-10">
+							<div class="store__name_block">
+								<h1>
+									<b><a style="color: #F7882F;" th:utext="${RestaurantInfo.restaurantName}">..</a></b>
+								</h1>
+							</div>
+							<div class="row">
+								<div class="col-3">
+								<!-- 
+									<div class="store__score col-5">
+										<h6>
+											<a>評分4.8/5</a>
+										</h6>
+									</div>
+									
+									<div class="col"></div>
+									<div class="store__comment__count col-5">
+										<h6>
+											<a>3 則評論</a>
+										</h6>
+									</div>
+								</div> -->
+
+							</div>
+							<div class="row">
+								<div class="col-3 row">
+									<div class="store__price col-5">
+										<h6>
+											<a th:utext="${RestaurantInfo.restaurantPrice}">..</a>
+										</h6>
+
+									</div>
+									<div class="col-2"></div>
+									<div class="store__category col-5">
+										<h6>
+											<a th:utext="${RestaurantInfo.restaurantCategory}">..</a>
+										</h6>
+									</div>
+								</div>
+
+							</div>
+							<div class="restaurant_detailed__info">
+								<div class="restaurant__businesshours">
+									<h4>
+										<span>營業時間：</span> <span
+											th:utext="${RestaurantInfo.businessHours}">..</span>
+									</h4>
+								</div>
+								<div class="restaurant__address">
+									<H4>
+										<span>地址：</span> <a style="text-decoration:none; color: #6B7A8F;"
+											th:href="@{${RestaurantInfo.restaurantMap}}" target="_blank"
+											th:utext="${RestaurantInfo.restaurantAddress}">..</a>
+									</H4>
+								</div>
+								<div class="restaurant__phone">
+									<H5>
+										<span>電話：<a href="tel:+886-987878878" style="text-decoration:none;color: #6B7A8F;"
+											th:utext="${RestaurantInfo.restaurantPhone}">..</a></span>
+									</H5>
+								</div>
+								<div class="restaurant__web">
+									<H5>
+										<span>網站：<a style="text-decoration:none;color: #6B7A8F;"
+											th:href="@{${RestaurantInfo.restaurantWeb}}">官方網站</a></span>
+									</H5>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="">
+						<Hr>
+						<div class="row">
+							<div class="col-8">
+								<div class="photo__list" style="text-align: center;">
+									<div class="photo__title">
+										<h2>
+											<span th:utext="${RestaurantInfo.restaurantName}"></span><span>
+												的最新照片</span>
+										</h2>
+									</div>
+									<div class="photo__item__list">
+										<div id="carouselExampleInterval" class="carousel slide"
+											data-bs-ride="carousel">
+											<div class="carousel-inner">
+												<!--<div class="carousel-item active" data-bs-interval="2000">
+													<img th:src="${RestaurantInfo.restaurantImg}"
+														class="d-block w-100" alt="...">
+												</div>-->
+											
+												<div class="carousel-item active" data-bs-interval="2000">
+													<img src="/img/肯德基/金海派富貴起司雞XL餐$19520220120-pc.jpeg"
+														class="d-block w-100" alt="...">
+												</div>
+												
+												<div class="carousel-item" data-bs-interval="4000"
+													th:each="PhotoListInfo : ${PhotoListInfos}">
+													<img th:src="${PhotoListInfo.RestaurantPhoto}"
+														class="d-block w-100 h-100" alt="...">
+												</div>
+
+											</div>
+											<button class="carousel-control-prev" type="button"
+												data-bs-target="#carouselExampleInterval"
+												data-bs-slide="prev">
+												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+												<span class="visually-hidden">Previous</span>
+											</button>
+											<button class="carousel-control-next" type="button"
+												data-bs-target="#carouselExampleInterval"
+												data-bs-slide="next">
+												<span class="carousel-control-next-icon" aria-hidden="true"></span>
+												<span class="visually-hidden">Next</span>
+											</button>
+										</div>
+									</div>
+
+
+								</div>
+								<br>
+								<br>
+								<div class="store__comment__block ">
+
+									<div class="store__comment__title">
+										<h4>
+											<b><span th:utext="${RestaurantInfo.restaurantName}"></span>
+												<a> 的評論區</a></b>
+										</h4>
+									</div>
+									<form method="post" action="/Restaurant">
+									<div class="comment__input__block row">
+										<div class="col-6 row">
+											<div class="customer__img col-3">
+												<img src="/img/image_preview.jpg" class=" member_pohto">
+											</div>
+											<div class="comment__funtion col-9">
+												<div class="comment__input__titel">
+													<!--<span>您還未登入 無法參與評論</span>-->
+												</div>
+												請寫下您的評論<div class="comment__textarea">
+													<input class="add_comment form-control" style="resize: none;" placeholder="發表評論" name="newComment">
+												</div>
+												<div class="">
+													<button type="submit">送出評論</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									</form>
+									<hr>
+									<div class="customer__comment__block row"
+										th:if="${CommentInfos} != null"
+										th:each="CommentInfo : ${CommentInfos}">
+										<div class="customer__comment__items">
+											<div class="customer__comment__item col-6 row">
+												<div class="customer__img col-3">
+													<img  th:src="${CommentInfo.photo}" class=" member_pohto">												</div>
+												<div class="comment__funtion col-9">
+													<div class="comment__titel row">
+														<div class="comment__name col-4">
+															<span th:utext="${CommentInfo.MemberName}">..</span>
+														</div>
+														<div class="update__time col-8">
+															<span th:utext="${CommentInfo.CreateDate}">..</span>
+														</div>
+													</div>
+													<div class="comment__textarea">
+														<label th:utext="${CommentInfo.Content}"> .. </label>
+													</div>
+
+												</div>
+											</div>
+											<hr>
+										</div>
+
+									</div>
+									<div class="comment__null" style="text-align: center;"
+										th:if="${CommentInfos} == null">
+										<h1>
+											<span>目前沒有評論!</span>
+										</h1>
+										<hr>
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="recent__restaurant__list">
+									<h4>
+										<b>餐廳推薦</b>
+									</h4>
+									<div class="recent__restaurant__content"  th:each="getrecommend : ${getrecommends}">
+										<div class="recent__restaurant__item row">
+											<div class="store__img col-4" style="text-align: center;">
+												<a ><img th:src="${getrecommend.restaurantImg}" class="img-fluid "></a>
+											</div>
+
+											<div class="recent__restaurant__info col-8">
+												<div class="recent__restaurant__name">
+													<b><a style="color: #F7882F; text-decoration:none;" th:utext="${getrecommend.restaurantName}"
+															th:href="@{'/Restaurant?Id='+${getrecommend.restaurantId}}">..</a></b>
+												</div>
+												<div class="recent__restaurant__area">
+													<span>地區 : </span><span th:utext="${getrecommend.restaurantCity}"></span>
+												</div>
+												<div class="recent__restaurant__address" >
+													<a style="text-decoration:none; color: #6B7A8F;" th:href="@{${getrecommend.restaurantMap}}" target="_blank"
+											th:utext="${getrecommend.restaurantAddress}"></a>
+												</div>
+												<div class="recent__restaurant__amount" >
+													<span>金額 : </span><span th:utext="${getrecommend.restaurantPrice}"> </span>
+												</div>
+												<div class="recent__restaurant__Classification" >
+													<span>分類 : </span><span th:utext="${getrecommend.restaurantCategory}"></span>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
